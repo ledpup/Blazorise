@@ -9,14 +9,14 @@
             <SidebarLabel>Main</SidebarLabel>
             <SidebarItem>
                 <SidebarLink To="#" Title="Home">
-                    <Icon Name="IconName.Home" Margin="Margin.Is3.FromRight" />Home
+                    <Icon Name="IconName.Home" Margin="Margin.Is3.FromEnd" />Home
                 </SidebarLink>
             </SidebarItem>
             <SidebarItem>
-                <SidebarLink Toggled="(isOpen)=> mailSidebarSubItems.Toggle(isOpen)" IsShow="true">
-                    <Icon Name="IconName.Mail" Margin="Margin.Is3.FromRight" />Email
+                <SidebarLink Toggled="(isOpen)=> mailSidebarSubItems.Toggle(isOpen)" IsShow>
+                    <Icon Name="IconName.Mail" Margin="Margin.Is3.FromEnd" />Email
                 </SidebarLink>
-                <SidebarSubItem @ref="mailSidebarSubItems" IsShow="true">
+                <SidebarSubItem @ref="mailSidebarSubItems" IsShow>
                     <SidebarItem>
                         <SidebarLink To="#email/inbox">Inbox</SidebarLink>
                     </SidebarItem>
@@ -27,10 +27,10 @@
                 </SidebarSubItem>
             </SidebarItem>
             <SidebarItem>
-                <SidebarLink Toggled="(isOpen)=> appsSidebarSubItems.Toggle(isOpen)" IsShow="true">
-                    <Icon Name="IconName.Smartphone" Margin="Margin.Is3.FromRight" />Apps
+                <SidebarLink Toggled="(isOpen)=> appsSidebarSubItems.Toggle(isOpen)" IsShow>
+                    <Icon Name="IconName.Smartphone" Margin="Margin.Is3.FromEnd" />Apps
                 </SidebarLink>
-                <SidebarSubItem @ref="appsSidebarSubItems" IsShow="true">
+                <SidebarSubItem @ref="appsSidebarSubItems" IsShow>
                     <SidebarItem>
                         <SidebarLink To="#apps/todo">Todo List</SidebarLink>
                     </SidebarItem>

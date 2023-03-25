@@ -1,5 +1,5 @@
 ﻿@inherits Blazorise.Progress
-<CascadingValue Value="@this" IsFixed="true">
+<CascadingValue Value="@this" IsFixed>
     <CascadingValue Value="@State">
         @if ( HasProgressBar )
         {
@@ -10,7 +10,7 @@
         else
         {
             <div class="progress-wrapper">
-                <progress class="@ClassNames" style="@StyleNames" value="@Percentage" min="@Min" max="@Max" @attributes="@Attributes">
+                <progress id="@ElementId" class="@ClassNames" style="@StyleNames" value="@Percentage" min="@Min" max="@Max" @attributes="@Attributes">
                     @ChildContent
                 </progress>
             </div>

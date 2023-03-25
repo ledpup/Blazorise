@@ -1,13 +1,17 @@
 ﻿@page "/docs/components/carousel"
 
-<Seo Canonical="/docs/components/carousel" Title="Blazorise Carousel component" Description="A slideshow component for cycling through elements - images or slides of text - like a carousel." />
+<Seo Canonical="/docs/components/carousel" Title="Blazorise Carousel component" Description="Learn to use and work with the Blazorise Carousel, a slideshow component for cycling through elements - images or slides of text - like a carousel." />
 
-<DocsPageTitle>
-    Carousel
+<DocsPageTitle Path="Components/Carousel">
+    Blazorise Carousel component
 </DocsPageTitle>
 
+<DocsPageLead>
+    Loop a series of images or texts in a limited space.
+</DocsPageLead>
+
 <DocsPageParagraph>
-    A slideshow component for cycling through elements - images or slides of text - like a carousel.
+    The <Code>Carousel</Code> component is used to display large numbers of visual content on a rotating timer. It also includes support for previous/next controls and indicators.
 </DocsPageParagraph>
 
 <UnorderedList>
@@ -31,8 +35,12 @@
 </DocsPageSection>
 
 <DocsPageSubtitle>
-    Attributes
+    API
 </DocsPageSubtitle>
+
+<Heading Size="HeadingSize.Is3">
+    Attributes
+</Heading>
 
 <DocsAttributes>
     <DocsAttributesItem Name="Autoplay" Type="bool" Default="true">
@@ -55,5 +63,14 @@
     </DocsAttributesItem>
     <DocsAttributesItem Name="NextButtonLocalizer" Type="TextLocalizerHandler">
         Function used to handle custom localization for next button that will override a default ITextLocalizer.
+    </DocsAttributesItem>
+    <DocsAttributesItem Name="AutoRepeat" Type="bool" Default="true">
+        Auto-repeats the carousel slides once they reach the end.
+    </DocsAttributesItem>
+    <DocsAttributesItem Name="Crossfade" Type="bool" Default="false">
+        Animate slides with a fade transition instead of a slide.
+    </DocsAttributesItem>
+    <DocsAttributesItem Name="Interval" Type="double" Default="2000">
+        Defines the interval(in milliseconds) after which the item will automatically slide.
     </DocsAttributesItem>
 </DocsAttributes>

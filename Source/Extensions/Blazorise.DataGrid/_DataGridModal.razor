@@ -21,7 +21,7 @@
                 <CloseButton Clicked="@CloseModal" AutoClose="false" />
             </ModalHeader>
             <ModalBody>
-                <Validations @ref="validations" Mode="ValidationMode.Manual" StatusChanged="@ValidationsStatusChanged" Model="@ValidationItem">
+                <Validations @ref="validations" Mode="ValidationMode.Manual" StatusChanged="@ValidationsStatusChanged" Model="@ValidationItem" HandlerType="@ParentDataGrid?.ValidationsHandlerType">
                     @if ( ParentDataGrid.ShowValidationsSummary )
                     {
                         <Field Display="@(ParentDataGrid.HasValidationsSummary || isInvalid ? Display.Always : Display.None)">
@@ -31,7 +31,7 @@
                     <Fields>
                         @foreach ( var column in OrderedEditableColumns )
                         {
-                            <Field ColumnSize="@column.PopupFieldColumnSize" Padding="Blazorise.Padding.Is2.OnX.Is2.OnY">
+                            <Field ColumnSize="@(column.EditFieldColumnSize ?? column.PopupFieldColumnSize ?? ColumnSize.IsHalf.OnDesktop)" Padding="Blazorise.Padding.Is2.OnX.Is2.OnY">
                                 <FieldLabel>
                                     @column.Caption
                                 </FieldLabel>
@@ -44,6 +44,26 @@
                 </Validations>
             </ModalBody>
             <ModalFooter>
+                @if ( ParentDataGrid.CommandColumn is null || ParentDataGrid.CommandColumn.CancelCommandAllowed )
+                {
+                    var cancelButtonString = Localizer.Localize( ParentDataGrid.Localizers?.CancelButtonLocalizer, "Cancel" );
+
+                    @if ( ParentDataGrid.CommandColumn?.CancelCommandTemplate != null )
+                    {
+                        @ParentDataGrid.CommandColumn.CancelCommandTemplate( new()
+                        {
+                            Clicked = EventCallback.Factory.Create( this, CloseModal ),
+                            LocalizationString = cancelButtonString,
+                            Item = EditItem,
+                        } )
+                    }
+                    else
+                    {
+                        <Button Color="Color.Link" Clicked="@CloseModal">
+                            @cancelButtonString
+                        </Button>
+                    }
+                }
                 @if ( ParentDataGrid.CommandColumn is null || ParentDataGrid.CommandColumn.SaveCommandAllowed )
                 {
                     var saveButtonString = Localizer.Localize( ParentDataGrid.Localizers?.SaveButtonLocalizer, "Save" );
@@ -71,26 +91,6 @@
                                 @saveButtonString
                             </Button>
                         }
-                    }
-                }
-                @if ( ParentDataGrid.CommandColumn is null || ParentDataGrid.CommandColumn.CancelCommandAllowed )
-                {
-                    var cancelButtonString = Localizer.Localize( ParentDataGrid.Localizers?.CancelButtonLocalizer, "Cancel" );
-
-                    @if ( ParentDataGrid.CommandColumn?.CancelCommandTemplate != null )
-                    {
-                        @ParentDataGrid.CommandColumn.CancelCommandTemplate( new()
-                        {
-                            Clicked = EventCallback.Factory.Create( this, CloseModal ),
-                            LocalizationString = cancelButtonString,
-                            Item = EditItem,
-                        } )
-                    }
-                    else
-                    {
-                        <Button Color="Color.Link" Clicked="@CloseModal">
-                            @cancelButtonString
-                        </Button>
                     }
                 }
             </ModalFooter>

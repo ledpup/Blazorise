@@ -1,13 +1,17 @@
 ﻿@page "/docs/extensions/dropdownlist"
 
-<Seo Canonical="/docs/extensions/dropdownlist" Title="Blazorise DropdownList" Description="Learn how to use Blazorise DropdownList extension components." />
+<Seo Canonical="/docs/extensions/dropdownlist" Title="Blazorise DropdownList component" Description="Learn to use and work with the Blazorise DropdownList component, which allows you to select a value from a list of predefined items." />
 
-<DocsPageTitle>
-    DropdownList
+<DocsPageTitle Path="Extensions/DropdownList">
+    Blazorise DropdownList component
 </DocsPageTitle>
 
-<DocsPageParagraph>
+<DocsPageLead>
     The <Code>DropdownList</Code> component allows you to select a value from a list of predefined items.
+</DocsPageLead>
+
+<DocsPageParagraph>
+    To be able to use <Code>DropdownList</Code> component you first need to install it.
 </DocsPageParagraph>
 
 <DocsPageSubtitle>
@@ -37,8 +41,12 @@
 </DocsPageSection>
 
 <DocsPageSubtitle>
-    Attributes
+    API
 </DocsPageSubtitle>
+
+<Heading Size="HeadingSize.Is3">
+    Attributes
+</Heading>
 
 <DocsAttributes>
     <DocsAttributesItem Name="TItem" Type="generic">
@@ -61,5 +69,8 @@
     </DocsAttributesItem>
     <DocsAttributesItem Name="MaxMenuHeight" Type="string">
         Sets the maximum height of the dropdown menu.
+    </DocsAttributesItem>
+    <DocsAttributesItem Name="Virtualize" Type="bool" Default="false">
+        Gets or sets whether the dropdown will use the <Code>Virtualize</Code> functionality.
     </DocsAttributesItem>
 </DocsAttributes>

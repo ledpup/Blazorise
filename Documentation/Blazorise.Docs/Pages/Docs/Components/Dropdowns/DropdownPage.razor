@@ -1,13 +1,21 @@
 ﻿@page "/docs/components/dropdown"
 
-<Seo Canonical="/docs/components/dropdown" Title="Blazorise Dropdown component" Description="Dropdowns are toggleable, contextual overlays for displaying lists of links and actions in a dropdown menu format." />
+<Seo Canonical="/docs/components/dropdown" Title="Blazorise Dropdown component" Description="Learn to use and work with the Blazorise Dropdown components which are toggleable, contextual overlays for displaying lists of links and actions in a dropdown menu format." />
 
-<DocsPageTitle>
-    Dropdown
+<DocsPageTitle Path="Components/Dropdown">
+    Blazorise Dropdown component
 </DocsPageTitle>
+
+<DocsPageLead>
+    Dropdowns expose additional content that "drops down" in a menu.
+</DocsPageLead>
 
 <DocsPageParagraph>
     Dropdowns are toggleable, contextual overlays for displaying lists of links and actions in a dropdown menu format.
+</DocsPageParagraph>
+
+<DocsPageParagraph>
+    Dropdowns are designed to work well with menus to provide a list of options the user can select from. However, dropdowns can also be used in lower-level applications (e.g. color picker and select). The API gives you complete control over showing, hiding, and positioning the menu.
 </DocsPageParagraph>
 
 <UnorderedList>
@@ -85,6 +93,29 @@
     <DocsPageSectionSource Code="NestedDropdownExample" />
 </DocsPageSection>
 
+<DocsPageSection>
+    <DocsPageSectionHeader Title="Nested submenus with direction">
+        Nested dropdowns with the manual <Code>Direction</Code> is also supported.
+    </DocsPageSectionHeader>
+    <DocsPageSectionContent Outlined>
+        <NestedDropdownDirectionExample />
+    </DocsPageSectionContent>
+    <DocsPageSectionSource Code="NestedDropdownDirectionExample" />
+</DocsPageSection>
+
+<DocsPageSubtitle>
+    Best Practices
+</DocsPageSubtitle>
+
+<DocsPageUnorderedList>
+    <DocsPageUnorderedListItem>
+        Dropdown should not be used for navigation. Use tabs for switching between content, or anchor elements for regular navigation.
+    </DocsPageUnorderedListItem>
+    <DocsPageUnorderedListItem>
+        Dropdown is not an input field. Use <Anchor To="docs/components/select">Select</Anchor>, or <Anchor To="docs/components/radio">Radio Button</Anchor> instead.
+    </DocsPageUnorderedListItem>
+</DocsPageUnorderedList>
+
 <DocsPageSubtitle>
     Functions
 </DocsPageSubtitle>
@@ -113,8 +144,12 @@
 </Table>
 
 <DocsPageSubtitle>
-    Attributes
+    API
 </DocsPageSubtitle>
+
+<Heading Size="HeadingSize.Is3">
+    Attributes
+</Heading>
 
 <DocsAttributes Title="Dropdown">
     <DocsAttributesItem Name="Visible" Type="bool" Default="false">
@@ -126,7 +161,7 @@
     <DocsAttributesItem Name="Disabled" Type="bool" Default="false">
         Disables the button or toggle button that are placed inside of dropdown.
     </DocsAttributesItem>
-    <DocsAttributesItem Name="Direction" Type="Direction" Default="Down">
+    <DocsAttributesItem Name="Direction" Type="Direction" Default="Default">
         Direction of an dropdown menu.
     </DocsAttributesItem>
     <DocsAttributesItem Name="VisibleChanged" Type="EventCallback">
@@ -135,9 +170,6 @@
 </DocsAttributes>
 
 <DocsAttributes Title="DropdownMenu">
-    <DocsAttributesItem Name="RightAligned" Type="bool" Default="false">
-        Right aligned dropdown menu.
-    </DocsAttributesItem>
     <DocsAttributesItem Name="MaxMenuHeight" Type="string">
         Sets the maximum height of the dropdown menu.
     </DocsAttributesItem>
@@ -159,10 +191,10 @@
 </DocsAttributes>
 
 <DocsAttributes Title="DropdownToggle">
-    <DocsAttributesItem Name="Color" Type="Colors" Default="None">
+    <DocsAttributesItem Name="Color" Type="Colors" Default="Default">
         Component visual or contextual style variants.
     </DocsAttributesItem>
-    <DocsAttributesItem Name="Size" Type="Size" Default="None">
+    <DocsAttributesItem Name="Size" Type="Size" Default="Default">
         Button size variations.
     </DocsAttributesItem>
     <DocsAttributesItem Name="Split" Type="bool" Default="false">

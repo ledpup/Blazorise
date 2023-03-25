@@ -2,1259 +2,1316 @@
 using System.Collections.Generic;
 #endregion
 
-namespace Blazorise.Providers
+namespace Blazorise.Providers;
+
+/// <summary>
+/// Used only when user wants to use extensions(Chart, Sidebar, etc) without CSS frameworks!!
+/// </summary>
+class EmptyClassProvider : IClassProvider
 {
-    /// <summary>
-    /// Used only when user wants to use extensions(Chart, Sidebar, etc) without CSS frameworks!!
-    /// </summary>
-    class EmptyClassProvider : IClassProvider
-    {
-        #region TextEdit
+    #region TextEdit
 
-        public string TextEdit( bool plaintext ) => null;
+    public string TextEdit( bool plaintext ) => null;
 
-        public string TextEditSize( Size size ) => null;
+    public string TextEditSize( Size size ) => null;
 
-        public string TextEditColor( Color color ) => null;
+    public string TextEditColor( Color color ) => null;
 
-        public string TextEditValidation( ValidationStatus validationStatus ) => null;
+    public string TextEditValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region MemoEdit
+    #region MemoEdit
 
-        public string MemoEdit() => null;
+    public string MemoEdit( bool plaintext ) => null;
 
-        public string MemoEditSize( Size size ) => null;
+    public string MemoEditSize( Size size ) => null;
 
-        public string MemoEditValidation( ValidationStatus validationStatus ) => null;
+    public string MemoEditValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region Select
+    #region Select
 
-        public string Select() => null;
+    public string Select() => null;
 
-        public string SelectMultiple() => null;
+    public string SelectMultiple() => null;
 
-        public string SelectSize( Size size ) => null;
+    public string SelectSize( Size size ) => null;
 
-        public string SelectValidation( ValidationStatus validationStatus ) => null;
+    public string SelectValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region NumericEdit
+    #region NumericEdit
 
-        public string NumericEdit( bool plaintext ) => null;
+    public string NumericEdit( bool plaintext ) => null;
 
-        public string NumericEditSize( Size size ) => null;
+    public string NumericEditSize( Size size ) => null;
 
-        public string NumericEditColor( Color color ) => null;
+    public string NumericEditColor( Color color ) => null;
 
-        public string NumericEditValidation( ValidationStatus validationStatus ) => null;
+    public string NumericEditValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region DateEdit
+    #region DateEdit
 
-        public string DateEdit( bool plaintext ) => null;
+    public string DateEdit( bool plaintext ) => null;
 
-        public string DateEditSize( Size size ) => null;
+    public string DateEditSize( Size size ) => null;
 
-        public string DateEditColor( Color color ) => null;
+    public string DateEditColor( Color color ) => null;
 
-        public string DateEditValidation( ValidationStatus validationStatus ) => null;
+    public string DateEditValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region TimeEdit
+    #region TimeEdit
 
-        public string TimeEdit( bool plaintext ) => null;
+    public string TimeEdit( bool plaintext ) => null;
 
-        public string TimeEditSize( Size size ) => null;
+    public string TimeEditSize( Size size ) => null;
 
-        public string TimeEditColor( Color color ) => null;
+    public string TimeEditColor( Color color ) => null;
 
-        public string TimeEditValidation( ValidationStatus validationStatus ) => null;
+    public string TimeEditValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region ColorEdit
+    #region ColorEdit
 
-        public string ColorEdit() => null;
+    public string ColorEdit() => null;
 
-        public string ColorEditSize( Size size ) => null;
+    public string ColorEditSize( Size size ) => null;
 
-        #endregion
+    #endregion
 
-        #region DatePicker
+    #region DatePicker
 
-        public string DatePicker( bool plaintext ) => null;
+    public string DatePicker( bool plaintext ) => null;
 
-        public string DatePickerSize( Size size ) => null;
+    public string DatePickerSize( Size size ) => null;
 
-        public string DatePickerColor( Color color ) => null;
+    public string DatePickerColor( Color color ) => null;
 
-        public string DatePickerValidation( ValidationStatus validationStatus ) => null;
+    public string DatePickerValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region TimePicker
+    #region TimePicker
 
-        public string TimePicker( bool plaintext ) => null;
+    public string TimePicker( bool plaintext ) => null;
 
-        public string TimePickerSize( Size size ) => null;
+    public string TimePickerSize( Size size ) => null;
 
-        public string TimePickerColor( Color color ) => null;
+    public string TimePickerColor( Color color ) => null;
 
-        public string TimePickerValidation( ValidationStatus validationStatus ) => null;
+    public string TimePickerValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region ColorPicker
+    #region ColorPicker
 
-        public string ColorPicker() => null;
+    public string ColorPicker() => null;
 
-        public string ColorPickerSize( Size size ) => null;
+    public string ColorPickerSize( Size size ) => null;
 
-        #endregion
+    #endregion
 
-        #region NumericPicker
+    #region NumericPicker
 
-        public string NumericPicker( bool plaintext ) => null;
+    public string NumericPicker( bool plaintext ) => null;
 
-        public string NumericPickerSize( Size size ) => null;
+    public string NumericPickerSize( Size size ) => null;
 
-        public string NumericPickerColor( Color color ) => null;
+    public string NumericPickerColor( Color color ) => null;
 
-        public string NumericPickerValidation( ValidationStatus validationStatus ) => null;
+    public string NumericPickerValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region InputMask
+    #region InputMask
 
-        public string InputMask( bool plaintext ) => null;
+    public string InputMask( bool plaintext ) => null;
 
-        public string InputMaskSize( Size size ) => null;
+    public string InputMaskSize( Size size ) => null;
 
-        public string InputMaskColor( Color color ) => null;
+    public string InputMaskColor( Color color ) => null;
 
-        public string InputMaskValidation( ValidationStatus validationStatus ) => null;
+    public string InputMaskValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region Check
+    #region Check
 
-        public string Check() => null;
+    public string Check() => null;
 
-        public string CheckSize( Size size ) => null;
+    public string CheckSize( Size size ) => null;
 
-        public string CheckInline() => null;
+    public string CheckInline() => null;
 
-        public string CheckCursor( Cursor cursor ) => null;
+    public string CheckCursor( Cursor cursor ) => null;
 
-        public string CheckValidation( ValidationStatus validationStatus ) => null;
+    public string CheckValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region RadioGroup
+    #region RadioGroup
 
-        public string RadioGroup( bool buttons, Orientation orientation ) => null;
+    public string RadioGroup( bool buttons, Orientation orientation ) => null;
 
-        public string RadioGroupSize( bool buttons, Orientation orientation, Size size ) => null;
+    public string RadioGroupSize( bool buttons, Orientation orientation, Size size ) => null;
 
-        public string RadioGroupValidation( ValidationStatus validationStatus ) => null;
+    public string RadioGroupValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region Radio
+    #region Radio
 
-        public string Radio( bool button ) => null;
+    public string Radio( bool button ) => null;
 
-        public string RadioSize( bool button, Size size ) => null;
+    public string RadioSize( bool button, Size size ) => null;
 
-        public string RadioInline( bool inline ) => null;
+    public string RadioInline( bool inline ) => null;
 
-        public string RadioCursor( Cursor cursor ) => null;
+    public string RadioCursor( Cursor cursor ) => null;
 
-        public string RadioValidation( ValidationStatus validationStatus ) => null;
+    public string RadioValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region Switch
+    #region Switch
 
-        public string Switch() => null;
+    public string Switch() => null;
 
-        public string SwitchColor( Color color ) => null;
+    public string SwitchColor( Color color ) => null;
 
-        public string SwitchSize( Size size ) => null;
+    public string SwitchSize( Size size ) => null;
 
-        public string SwitchChecked( bool @checked ) => null;
+    public string SwitchChecked( bool @checked ) => null;
 
-        public string SwitchCursor( Cursor cursor ) => null;
+    public string SwitchCursor( Cursor cursor ) => null;
 
-        public string SwitchValidation( ValidationStatus validationStatus ) => null;
+    public string SwitchValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region FileEdit
+    #region FileEdit
 
-        public string FileEdit() => null;
+    public string FileEdit() => null;
 
-        public string FileEditSize( Size size ) => null;
+    public string FileEditSize( Size size ) => null;
 
-        public string FileEditValidation( ValidationStatus validationStatus ) => null;
+    public string FileEditValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region Slider
+    #region Slider
 
-        public string Slider() => null;
+    public string Slider() => null;
 
-        public string SliderColor( Color color ) => null;
+    public string SliderColor( Color color ) => null;
 
-        public string SliderValidation( ValidationStatus validationStatus ) => null;
+    public string SliderValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region Rating
+    #region Rating
 
-        public string Rating() => null;
+    public string Rating() => null;
 
-        public string RatingDisabled( bool disabled ) => null;
+    public string RatingDisabled( bool disabled ) => null;
 
-        public string RatingReadonly( bool @readonly ) => null;
+    public string RatingReadonly( bool @readonly ) => null;
 
-        public string RatingItem() => null;
+    public string RatingItem() => null;
 
-        public string RatingItemColor( Color color ) => null;
+    public string RatingItemColor( Color color ) => null;
 
-        public string RatingItemSelected( bool selected ) => null;
+    public string RatingItemSelected( bool selected ) => null;
 
-        public string RatingItemHovered( bool hover ) => null;
+    public string RatingItemHovered( bool hover ) => null;
 
-        #endregion
+    #endregion
 
-        #region Label
+    #region Label
 
-        public string Label() => null;
+    public string Label() => null;
 
-        public string LabelType( LabelType labelType ) => null;
+    public string LabelType( LabelType labelType ) => null;
 
-        public string LabelCursor( Cursor cursor ) => null;
+    public string LabelCursor( Cursor cursor ) => null;
 
-        #endregion
+    #endregion
 
-        #region Help
+    #region Help
 
-        public string Help() => null;
+    public string Help() => null;
 
-        #endregion
+    #endregion
 
-        #region Validation
+    #region Validation
 
-        public string ValidationSuccess() => null;
+    public string ValidationSuccess() => null;
 
-        public string ValidationSuccessTooltip() => null;
+    public string ValidationSuccessTooltip() => null;
 
-        public string ValidationError() => null;
+    public string ValidationError() => null;
 
-        public string ValidationErrorTooltip() => null;
+    public string ValidationErrorTooltip() => null;
 
-        public string ValidationNone() => null;
+    public string ValidationNone() => null;
 
-        public string ValidationSummary() => null;
+    public string ValidationSummary() => null;
 
-        public string ValidationSummaryError() => null;
+    public string ValidationSummaryError() => null;
 
-        #endregion
+    #endregion
 
-        #region Fields
+    #region Fields
 
-        public string Fields() => null;
+    public string Fields() => null;
 
-        public string FieldsBody() => null;
+    public string FieldsBody() => null;
 
-        public string FieldsColumn() => null;
+    public string FieldsColumn() => null;
 
-        #endregion
+    #endregion
 
-        #region Field
+    #region Field
 
-        public string Field() => null;
+    public string Field() => null;
 
-        public string FieldHorizontal() => null;
+    public string FieldHorizontal() => null;
 
-        public string FieldColumn() => null;
+    public string FieldColumn() => null;
 
-        public string FieldJustifyContent( JustifyContent justifyContent ) => null;
+    public string FieldJustifyContent( JustifyContent justifyContent ) => null;
 
-        public string FieldValidation( ValidationStatus validationStatus ) => null;
+    public string FieldValidation( ValidationStatus validationStatus ) => null;
 
-        #endregion
+    #endregion
 
-        #region FieldLabel
+    #region FieldLabel
 
-        public string FieldLabel( bool horizontal ) => null;
+    public string FieldLabel( bool horizontal ) => null;
 
-        #endregion
+    #endregion
 
-        #region FieldBody
+    #region FieldBody
 
-        public string FieldBody() => null;
+    public string FieldBody() => null;
 
-        #endregion
+    #endregion
 
-        #region FieldHelp
+    #region FieldHelp
 
-        public string FieldHelp() => null;
+    public string FieldHelp() => null;
 
-        #endregion
+    #endregion
 
-        #region Control
+    #region FocusTrap
 
-        public string ControlCheck() => null;
+    public string FocusTrap() => null;
 
-        public string ControlRadio() => null;
+    #endregion
 
-        public string ControlSwitch() => null;
+    #region Control
 
-        public string ControlFile() => null;
+    public string ControlCheck() => null;
 
-        public string ControlText() => null;
+    public string ControlRadio() => null;
 
-        #endregion
+    public string ControlSwitch() => null;
 
-        #region Addons
+    public string ControlFile() => null;
 
-        public string Addons() => null;
+    public string ControlText() => null;
 
-        public string AddonsSize( Size size ) => null;
+    #endregion
 
-        public string AddonsHasButton( bool hasButton ) => null;
+    #region Addons
 
-        public string Addon( AddonType addonType ) => null;
+    public string Addons() => null;
 
-        public string AddonLabel() => null;
+    public string AddonsSize( Size size ) => null;
 
-        //public string AddonContainer() => null;
+    public string AddonsHasButton( bool hasButton ) => null;
 
-        #endregion
+    public string Addon( AddonType addonType ) => null;
 
-        #region Inline
+    public string AddonSize( Size size ) => null;
 
-        public string Inline() => "form-inline";
+    public string AddonLabel() => null;
 
-        #endregion
+    //public string AddonContainer() => null;
 
-        #region Button
+    #endregion
 
-        public string Button() => null;
+    #region Inline
 
-        public string ButtonColor( Color color ) => null;
+    public string Inline() => "form-inline";
 
-        public string ButtonOutline( Color color ) => null;
+    #endregion
 
-        public string ButtonSize( Size size ) => null;
+    #region Button
 
-        public string ButtonBlock() => null;
+    public string Button( bool outline ) => null;
 
-        public string ButtonActive() => null;
+    public string ButtonColor( Color color, bool outline ) => null;
 
-        public string ButtonDisabled() => null;
+    public string ButtonSize( Size size, bool outline ) => null;
 
-        public string ButtonLoading() => null;
+    public string ButtonBlock( bool outline ) => null;
 
-        #endregion
+    public string ButtonActive( bool outline ) => null;
 
-        #region Buttons
+    public string ButtonDisabled( bool outline ) => null;
 
-        public string Buttons( ButtonsRole role, Orientation orientation ) => null;
+    public string ButtonLoading( bool outline ) => null;
 
-        public string ButtonsSize( Size size ) => null;
+    #endregion
 
-        #endregion
+    #region Buttons
 
-        #region CloseButton
+    public string Buttons( ButtonsRole role, Orientation orientation ) => null;
 
-        public string CloseButton() => null;
+    public string ButtonsSize( Size size ) => null;
 
-        #endregion
+    #endregion
 
-        #region Dropdown
+    #region CloseButton
 
-        public string Dropdown( bool isDropdownSubmenu ) => null;
+    public string CloseButton() => null;
 
-        public string DropdownGroup() => null;
+    #endregion
 
-        public string DropdownShow() => null;
+    #region Dropdown
 
-        public string DropdownRight() => null;
+    public string Dropdown( bool isDropdownSubmenu ) => null;
 
-        public string DropdownItem() => null;
+    public string DropdownGroup() => null;
 
-        public string DropdownItemActive( bool active ) => null;
+    public string DropdownObserverShow() => null;
 
-        public string DropdownItemDisabled( bool disabled ) => null;
+    public string DropdownShow() => null;
 
-        public string DropdownDivider() => null;
+    public string DropdownRight() => null;
 
-        public string DropdownHeader() => null;
+    public string DropdownItem() => null;
 
-        public string DropdownMenu() => null;
+    public string DropdownItemActive( bool active ) => null;
 
-        public string DropdownMenuScrollable() => null;
+    public string DropdownItemDisabled( bool disabled ) => null;
 
-        //public string DropdownMenuBody() => null;
+    public string DropdownDivider() => null;
 
-        public string DropdownMenuVisible( bool visible ) => null;
+    public string DropdownHeader() => null;
 
-        public string DropdownMenuRight() => null;
+    public string DropdownMenu() => null;
 
-        public string DropdownToggle( bool isDropdownSubmenu ) => null;
+    public string DropdownMenuSelector() => null;
 
-        public string DropdownToggleColor( Color color ) => null;
+    public string DropdownMenuScrollable() => null;
 
-        public string DropdownToggleOutline( Color color ) => null;
+    //public string DropdownMenuBody() => null;
 
-        public string DropdownToggleSize( Size size ) => null;
+    public string DropdownMenuVisible( bool visible ) => null;
 
-        public string DropdownToggleSplit() => null;
+    public string DropdownMenuRight() => null;
 
-        public string DropdownToggleIcon( bool visible ) => null;
+    public string DropdownToggle( bool isDropdownSubmenu, bool outline ) => null;
 
-        public string DropdownDirection( Direction direction ) => null;
+    public string DropdownToggleSelector( bool isDropdownSubmenu ) => null;
 
-        public string DropdownTableResponsive() => null;
+    public string DropdownToggleColor( Color color, bool outline ) => null;
 
-        #endregion
+    public string DropdownToggleSize( Size size, bool outline ) => null;
 
-        #region Tabs
+    public string DropdownToggleSplit( bool split ) => null;
 
-        public string Tabs( bool pills ) => null;
+    public string DropdownToggleIcon( bool visible ) => null;
 
-        public string TabsCards() => null;
+    public string DropdownDirection( Direction direction ) => null;
 
-        public string TabsFullWidth() => null;
+    #endregion
 
-        public string TabsJustified() => null;
+    #region Tabs
 
-        public string TabsVertical() => null;
+    public string Tabs( bool pills ) => null;
 
-        public string TabItem() => null;
+    public string TabsCards() => null;
 
-        public string TabItemActive( bool active ) => null;
+    public string TabsFullWidth() => null;
 
-        public string TabItemDisabled( bool disabled ) => null;
+    public string TabsJustified() => null;
 
-        public string TabLink() => null;
+    public string TabsVertical() => null;
 
-        public string TabLinkActive( bool active ) => null;
+    public string TabItem() => null;
 
-        public string TabLinkDisabled( bool disabled ) => null;
+    public string TabItemActive( bool active ) => null;
 
-        public string TabsContent() => null;
+    public string TabItemDisabled( bool disabled ) => null;
 
-        public string TabPanel() => null;
+    public string TabLink( TabPosition tabPosition ) => null;
 
-        public string TabPanelActive( bool active ) => null;
+    public string TabLinkActive( bool active ) => null;
 
-        #endregion
+    public string TabLinkDisabled( bool disabled ) => null;
 
-        #region Steps
+    public string TabsContent() => null;
 
-        public string Steps() => null;
+    public string TabPanel() => null;
 
-        public string StepItem() => null;
+    public string TabPanelActive( bool active ) => null;
 
-        public string StepItemActive( bool active ) => null;
+    #endregion
 
-        public string StepItemCompleted( bool completed ) => null;
+    #region Steps
 
-        public string StepItemColor( Color color ) => null;
+    public string Steps() => null;
 
-        public string StepItemMarker() => null;
+    public string StepItem() => null;
 
-        public string StepItemDescription() => null;
+    public string StepItemActive( bool active ) => null;
 
-        public string StepsContent() => null;
+    public string StepItemCompleted( bool completed ) => null;
 
-        public string StepPanel() => null;
+    public string StepItemColor( Color color ) => null;
 
-        public string StepPanelActive( bool active ) => null;
+    public string StepItemMarker() => null;
 
-        #endregion
+    public string StepItemMarkerColor( Color color, bool active ) => null;
 
-        #region Carousel
+    public string StepItemDescription() => null;
 
-        public string Carousel() => null;
+    public string StepsContent() => null;
 
-        public string CarouselSlides() => null;
+    public string StepPanel() => null;
 
-        public string CarouselSlide() => null;
+    public string StepPanelActive( bool active ) => null;
 
-        public string CarouselSlideActive( bool active ) => null;
+    #endregion
 
-        public string CarouselSlideSlidingLeft( bool left ) => null;
+    #region Carousel
 
-        public string CarouselSlideSlidingRight( bool right ) => null;
+    public string Carousel() => null;
 
-        public string CarouselSlideSlidingPrev( bool previous ) => null;
+    public string CarouselSlides() => null;
 
-        public string CarouselSlideSlidingNext( bool next ) => null;
+    public string CarouselSlide() => null;
 
-        public string CarouselIndicators() => null;
+    public string CarouselSlideActive( bool active ) => null;
 
-        public string CarouselIndicator() => null;
+    public string CarouselSlideIndex( int activeSlideIndex, int slideindex, int totalSlides ) => null;
 
-        public string CarouselIndicatorActive( bool active ) => null;
+    public string CarouselSlideSlidingLeft( bool left ) => null;
 
-        public string CarouselFade( bool fade ) => null;
+    public string CarouselSlideSlidingRight( bool right ) => null;
 
-        public string CarouselCaption() => null;
+    public string CarouselSlideSlidingPrev( bool previous ) => null;
 
-        #endregion
+    public string CarouselSlideSlidingNext( bool next ) => null;
 
-        #region Jumbotron
+    public string CarouselIndicators() => null;
 
-        public string Jumbotron() => null;
+    public string CarouselIndicator() => null;
 
-        public string JumbotronBackground( Background background ) => null;
+    public string CarouselIndicatorActive( bool active ) => null;
 
-        public string JumbotronTitle( JumbotronTitleSize jumbotronTitleSize ) => null;
+    public string CarouselFade( bool fade ) => null;
 
-        public string JumbotronSubtitle() => null;
+    public string CarouselCaption() => null;
 
-        #endregion
+    #endregion
 
-        #region Card
+    #region Jumbotron
 
-        public string CardDeck() => null;
+    public string Jumbotron() => null;
 
-        public string CardGroup() => null;
+    public string JumbotronBackground( Background background ) => null;
 
-        public string Card() => null;
+    public string JumbotronTitle( JumbotronTitleSize jumbotronTitleSize ) => null;
 
-        public string CardWhiteText() => null;
+    public string JumbotronSubtitle() => null;
 
-        public string CardActions() => null;
+    #endregion
 
-        public string CardBody() => null;
+    #region Card
 
-        public string CardFooter() => null;
+    public string CardDeck() => null;
 
-        public string CardHeader() => null;
+    public string CardGroup() => null;
 
-        public string CardImage() => null;
+    public string Card() => null;
 
-        public string CardTitle( bool insideHeader ) => null;
+    public string CardWhiteText() => null;
 
-        public string CardTitleSize( bool insideHeader, int? size ) => null;
+    public string CardActions() => null;
 
-        public string CardSubtitle( bool insideHeader ) => null;
+    public string CardBody() => null;
 
-        public string CardSubtitleSize( bool insideHeader, int size ) => null;
+    public string CardFooter() => null;
 
-        public string CardText() => null;
+    public string CardHeader() => null;
 
-        public string CardLink() => null;
+    public string CardImage() => null;
 
-        #endregion
+    public string CardTitle( bool insideHeader ) => null;
 
-        #region ListGroup
+    public string CardTitleSize( bool insideHeader, int? size ) => null;
 
-        public string ListGroup() => null;
+    public string CardSubtitle( bool insideHeader ) => null;
 
-        public string ListGroupFlush() => null;
+    public string CardSubtitleSize( bool insideHeader, int size ) => null;
 
-        public string ListGroupItem() => null;
+    public string CardText() => null;
 
-        public string ListGroupItemSelectable() => null;
+    public string CardLink() => null;
 
-        public string ListGroupItemActive() => null;
+    public string CardLinkActive( bool active ) => null;
 
-        public string ListGroupItemDisabled() => null;
+    #endregion
 
-        public string ListGroupItemColor( Color color ) => null;
+    #region ListGroup
 
-        #endregion
+    public string ListGroup() => null;
 
-        #region Layout
+    public string ListGroupFlush( bool flush ) => null;
 
-        public string Layout() => null;
+    public string ListGroupScrollable( bool scrollable ) => null;
 
-        public string LayoutHasSider() => null;
+    public string ListGroupItem() => null;
 
-        public string LayoutBody() => null;
+    public string ListGroupItemSelectable() => null;
 
-        public string LayoutContent() => null;
+    public string ListGroupItemActive() => null;
 
-        public string LayoutHeader() => null;
+    public string ListGroupItemDisabled() => null;
 
-        public string LayoutHeaderFixed() => null;
+    public string ListGroupItemColor( Color color, bool selectable, bool active ) => null;
 
-        public string LayoutFooter() => null;
+    #endregion
 
-        public string LayoutFooterFixed() => null;
+    #region Layout
 
-        public string LayoutSider() => null;
+    public string Layout() => null;
 
-        public string LayoutSiderContent() => null;
+    public string LayoutHasSider() => null;
 
-        public string LayoutLoading() => null;
+    public string LayoutBody() => null;
 
-        public string LayoutRoot() => null;
+    public string LayoutContent() => null;
 
-        #endregion
+    public string LayoutHeader() => null;
 
-        #region Container
+    public string LayoutHeaderFixed() => null;
 
-        public string Container( Breakpoint breakpoint ) => null;
+    public string LayoutFooter() => null;
 
-        public string ContainerFluid() => null;
+    public string LayoutFooterFixed() => null;
 
-        #endregion
+    public string LayoutSider() => null;
 
-        #region Bar
+    public string LayoutSiderContent() => null;
 
-        public string Bar() => null;
+    public string LayoutLoading() => null;
 
-        public string BarInitial( bool initial ) => null;
+    public string LayoutRoot() => null;
 
-        public string BarAlignment( Alignment alignment ) => null;
+    #endregion
 
-        public string BarThemeContrast( ThemeContrast themeContrast ) => null;
+    #region Container
 
-        public string BarBreakpoint( Breakpoint breakpoint ) => null;
+    public string Container( Breakpoint breakpoint ) => null;
 
-        public string BarMode( BarMode mode ) => null;
+    public string ContainerFluid() => null;
 
-        public string BarItem( BarMode mode, bool hasDropdown ) => null;
+    #endregion
 
-        public string BarItemActive( BarMode mode ) => null;
+    #region Bar
 
-        public string BarItemDisabled( BarMode mode ) => null;
+    public string Bar() => null;
 
-        public string BarItemHasDropdown( BarMode mode ) => null;
+    public string BarInitial( bool initial ) => null;
 
-        public string BarItemHasDropdownShow( BarMode mode ) => null;
+    public string BarAlignment( Alignment alignment ) => null;
 
-        public string BarLink( BarMode mode ) => null;
+    public string BarThemeContrast( ThemeContrast themeContrast ) => null;
 
-        public string BarLinkDisabled( BarMode mode ) => null;
+    public string BarBreakpoint( Breakpoint breakpoint ) => null;
 
-        //public  string BarCollapse() => null;
+    public string BarMode( BarMode mode ) => null;
 
-        public string BarBrand( BarMode mode ) => null;
+    public string BarItem( BarMode mode, bool hasDropdown ) => null;
 
-        public string BarToggler( BarMode mode, BarTogglerMode togglerMode ) => null;
+    public string BarItemActive( BarMode mode ) => null;
 
-        public string BarTogglerCollapsed( BarMode mode, BarTogglerMode togglerMode, bool isShow ) => null;
+    public string BarItemDisabled( BarMode mode ) => null;
 
-        public string BarMenu( BarMode mode ) => null;
+    public string BarItemHasDropdown( BarMode mode ) => null;
 
-        public string BarMenuShow( BarMode mode ) => null;
+    public string BarItemHasDropdownShow( BarMode mode ) => null;
 
-        public string BarStart( BarMode mode ) => null;
+    public string BarLink( BarMode mode ) => null;
 
-        public string BarEnd( BarMode mode ) => null;
+    public string BarLinkDisabled( BarMode mode ) => null;
 
-        //public  string BarHasDropdown() => null;
+    //public  string BarCollapse() => null;
 
-        public string BarDropdown( BarMode mode, bool isBarDropDownSubmenu ) => null;
+    public string BarBrand( BarMode mode ) => null;
 
-        public string BarDropdownShow( BarMode mode ) => null;
+    public string BarToggler( BarMode mode, BarTogglerMode togglerMode ) => null;
 
-        public string BarDropdownToggle( BarMode mode, bool isBarDropDownSubmenu ) => null;
+    public string BarTogglerCollapsed( BarMode mode, BarTogglerMode togglerMode, bool isShow ) => null;
 
-        public string BarDropdownItem( BarMode mode ) => null;
+    public string BarMenu( BarMode mode ) => null;
 
-        public string BarDropdownDivider( BarMode mode ) => null;
+    public string BarMenuShow( BarMode mode ) => null;
 
-        public string BarTogglerIcon( BarMode mode ) => null;
+    public string BarStart( BarMode mode ) => null;
 
-        public string BarDropdownMenu( BarMode mode ) => null;
+    public string BarEnd( BarMode mode ) => null;
 
-        public string BarDropdownMenuVisible( BarMode mode, bool visible ) => null;
+    //public  string BarHasDropdown() => null;
 
-        public string BarDropdownMenuRight( BarMode mode ) => null;
+    public string BarDropdown( BarMode mode, bool isBarDropDownSubmenu ) => null;
 
-        public string BarDropdownMenuContainer( BarMode mode ) => null;
+    public string BarDropdownShow( BarMode mode ) => null;
 
-        public string BarCollapsed( BarMode mode ) => null;
+    public string BarDropdownToggle( BarMode mode, bool isBarDropDownSubmenu ) => null;
 
-        public string BarLabel() => null;
+    public string BarDropdownToggleDisabled( BarMode mode, bool isBarDropDownSubmenu, bool disabled ) => null;
 
-        #endregion
+    public string BarDropdownItem( BarMode mode ) => null;
 
-        #region Accordion
+    public string BarDropdownDivider( BarMode mode ) => null;
 
-        public string Accordion() => null;
+    public string BarTogglerIcon( BarMode mode ) => null;
 
-        #endregion
+    public string BarDropdownMenu( BarMode mode ) => null;
 
-        #region Collapse
+    public string BarDropdownMenuVisible( BarMode mode, bool visible ) => null;
 
-        public string Collapse( bool accordion ) => null;
+    public string BarDropdownMenuRight( BarMode mode ) => null;
 
-        public string CollapseActive( bool accordion, bool active ) => null;
+    public string BarDropdownMenuContainer( BarMode mode ) => null;
 
-        public string CollapseHeader( bool accordion ) => null;
+    public string BarCollapsed( BarMode mode ) => null;
 
-        public string CollapseBody( bool accordion ) => null;
+    public string BarLabel() => null;
 
-        public string CollapseBodyActive( bool accordion, bool active ) => null;
+    #endregion
 
-        public string CollapseBodyContent( bool accordion ) => null;
+    #region Accordion
 
-        #endregion
+    public string Accordion() => null;
 
-        #region Row
+    #endregion
 
-        public string Row() => null;
+    #region AccordionToggle
 
-        public string RowColumns( RowColumnsSize rowColumnsSize, RowColumnsDefinition rowColumnsDefinition ) => null;
+    public string AccordionToggle() => null;
 
-        public string RowNoGutters() => null;
+    public string AccordionToggleCollapsed( bool collapsed ) => null;
 
-        #endregion
+    #endregion
 
-        #region Column
+    #region Collapse
 
-        public string Column( bool hasSizes ) => null;
+    public string Collapse( bool accordion ) => null;
 
-        public string Column( ColumnWidth columnWidth, IEnumerable<(Breakpoint breakpoint, bool offset)> rules ) => null;
+    public string CollapseActive( bool accordion, bool active ) => null;
 
-        private string Column( ColumnWidth columnWidth, Breakpoint breakpoint, bool offset ) => null;
+    public string CollapseHeader( bool accordion ) => null;
 
-        #endregion
+    public string CollapseBody( bool accordion ) => null;
 
-        #region Display
+    public string CollapseBodyActive( bool accordion, bool active ) => null;
 
-        public string Display( DisplayType displayType, DisplayDefinition displayDefinition ) => null;
+    public string CollapseBodyContent( bool accordion, bool firstInAccordion, bool lastInAccordion ) => null;
 
-        public string Display( DisplayType displayType, IEnumerable<DisplayDefinition> displayDefinitions ) => null;
+    #endregion
 
-        #endregion
+    #region Row
 
-        #region Alert
+    public string Row() => null;
 
-        public string Alert() => null;
+    public string RowColumns( RowColumnsSize rowColumnsSize, RowColumnsDefinition rowColumnsDefinition ) => null;
 
-        public string AlertColor( Color color ) => null;
+    public string RowNoGutters( bool noGutters ) => null;
 
-        public string AlertDismisable() => null;
+    #endregion
 
-        public string AlertFade() => null;
+    #region Column
 
-        public string AlertShow() => null;
+    public string Column( bool hasSizes ) => null;
 
-        public string AlertHasMessage() => null;
+    public string Column( ColumnWidth columnWidth, Breakpoint breakpoint, bool offset ) => null;
 
-        public string AlertHasDescription() => null;
+    public string Column( IEnumerable<ColumnDefinition> columnDefinitions ) => null;
 
-        public string AlertMessage() => null;
+    #endregion
 
-        public string AlertDescription() => null;
+    #region Display
 
-        #endregion
+    public string Display( DisplayType displayType, DisplayDefinition displayDefinition ) => null;
 
-        #region Modal
+    public string Display( DisplayType displayType, IEnumerable<DisplayDefinition> displayDefinitions ) => null;
 
-        public string Modal() => null;
+    #endregion
 
-        public string ModalFade() => null;
+    #region Alert
 
-        public string ModalFade( bool animation ) => null;
+    public string Alert() => null;
 
-        public string ModalVisible( bool visible ) => null;
+    public string AlertColor( Color color ) => null;
 
-        public string ModalBackdrop() => null;
+    public string AlertDismisable() => null;
 
-        public string ModalBackdropFade() => null;
+    public string AlertFade() => null;
 
-        public string ModalBackdropVisible( bool visible ) => null;
+    public string AlertShow() => null;
 
-        public string ModalContent( bool dialog ) => null;
+    public string AlertHasMessage() => null;
 
-        public string ModalContentSize( ModalSize modalSize ) => null;
+    public string AlertHasDescription() => null;
 
-        public string ModalContentFullscreen( bool fullscreen ) => null;
+    public string AlertMessage() => null;
 
-        public string ModalContentCentered( bool centered ) => null;
+    public string AlertDescription() => null;
 
-        public string ModalContentScrollable( bool scrollable ) => null;
+    #endregion
 
-        public string ModalBody() => null;
+    #region Modal
 
-        public string ModalHeader() => null;
+    public string Modal() => null;
 
-        public string ModalFooter() => null;
+    public string ModalFade() => null;
 
-        public string ModalTitle() => null;
+    public string ModalFade( bool animation ) => null;
 
-        #endregion
+    public string ModalVisible( bool visible ) => null;
 
-        #region Pagination
+    public string ModalBackdrop() => null;
 
-        public string Pagination() => null;
+    public string ModalBackdropFade() => null;
 
-        public string PaginationSize( Size size ) => null;
+    public string ModalBackdropVisible( bool visible ) => null;
 
-        public string PaginationItem() => null;
+    public string ModalContent( bool dialog ) => null;
 
-        public string PaginationItemActive() => null;
+    public string ModalContentSize( ModalSize modalSize ) => null;
 
-        public string PaginationItemDisabled() => null;
+    public string ModalContentCentered( bool centered ) => null;
 
-        public string PaginationLink() => null;
+    public string ModalContentScrollable( bool scrollable ) => null;
 
-        public string PaginationLinkActive() => null;
+    public string ModalBody() => null;
 
-        public string PaginationLinkDisabled() => null;
+    public string ModalHeader() => null;
 
-        #endregion
+    public string ModalFooter() => null;
 
-        #region Progress
+    public string ModalTitle() => null;
 
-        public string Progress() => null;
+    #endregion
 
-        public string ProgressSize( Size size ) => null;
+    #region Pagination
 
-        public string ProgressColor( Color color ) => null;
+    public string Pagination() => null;
 
-        public string ProgressStriped() => null;
+    public string PaginationSize( Size size ) => null;
 
-        public string ProgressAnimated() => null;
+    public string PaginationItem() => null;
 
-        public string ProgressWidth( int width ) => null;
+    public string PaginationItemActive() => null;
 
-        public string ProgressBar() => null;
+    public string PaginationItemDisabled() => null;
 
-        public string ProgressBarSize( Size size ) => null;
+    public string PaginationLink() => null;
 
-        public string ProgressBarColor( Color color ) => null;
+    public string PaginationLinkSize( Size size ) => null;
 
-        public string ProgressBarStriped() => null;
+    public string PaginationLinkActive( bool active ) => null;
 
-        public string ProgressBarAnimated() => null;
+    public string PaginationLinkDisabled( bool disabled ) => null;
 
-        public string ProgressBarWidth( int width ) => null;
+    #endregion
 
-        #endregion
+    #region Progress
 
-        #region Chart
+    public string Progress() => null;
 
-        public string Chart() => null;
+    public string ProgressSize( Size size ) => null;
 
-        #endregion
+    public string ProgressColor( Color color ) => null;
 
-        #region Colors
+    public string ProgressStriped() => null;
 
-        public string BackgroundColor( Background background ) => null;
+    public string ProgressAnimated() => null;
 
-        #endregion
+    public string ProgressWidth( int width ) => null;
 
-        #region Table
+    public string ProgressBar() => null;
 
-        public string Table() => null;
+    public string ProgressBarSize( Size size ) => null;
 
-        public string TableFullWidth() => null;
+    public string ProgressBarColor( Color color ) => null;
 
-        public string TableStriped() => null;
+    public string ProgressBarStriped() => null;
 
-        public string TableHoverable() => null;
+    public string ProgressBarAnimated() => null;
 
-        public string TableBordered() => null;
+    public string ProgressBarWidth( int width ) => null;
 
-        public string TableNarrow() => null;
+    #endregion
 
-        public string TableBorderless() => null;
+    #region Chart
 
-        public string TableHeader() => null;
+    public string Chart() => null;
 
-        public string TableHeaderThemeContrast( ThemeContrast themeContrast ) => null;
+    #endregion
 
-        public string TableHeaderCell() => null;
+    #region Colors
 
-        public string TableFooter() => null;
+    public string BackgroundColor( Background background ) => null;
 
-        public string TableBody() => null;
+    #endregion
 
-        public string TableRow() => null;
+    #region Table
 
-        public string TableRowColor( Color color ) => null;
+    public string Table() => null;
 
-        public string TableRowHoverCursor() => null;
+    public string TableFullWidth() => null;
 
-        public string TableRowIsSelected() => null;
+    public string TableStriped() => null;
 
-        public string TableRowHeader() => null;
+    public string TableHoverable() => null;
 
-        public string TableRowCell() => null;
+    public string TableBordered() => null;
 
-        public string TableRowCellColor( Color color ) => null;
+    public string TableNarrow() => null;
 
-        public string TableResponsive() => null;
+    public string TableBorderless() => null;
 
-        public string TableFixedHeader() => null;
+    public string TableHeader() => null;
 
-        #endregion
+    public string TableHeaderThemeContrast( ThemeContrast themeContrast ) => null;
 
-        #region Badge
+    public string TableHeaderCell() => null;
 
-        public string Badge() => null;
+    public string TableHeaderCellCursor( Cursor cursor ) => null;
 
-        public string BadgeColor( Color color ) => null;
+    public string TableFooter() => null;
 
-        public string BadgePill() => null;
+    public string TableBody() => null;
 
-        public string BadgeClose() => null;
+    public string TableRow( bool striped, bool hoverable ) => null;
 
-        #endregion
+    public string TableRowColor( Color color ) => null;
 
-        #region Media
+    public string TableRowHoverCursor() => null;
 
-        public string Media() => null;
+    public string TableRowIsSelected() => null;
 
-        public string MediaLeft() => null;
+    public string TableRowHeader() => null;
 
-        public string MediaRight() => null;
+    public string TableRowCell() => null;
 
-        public string MediaBody() => null;
+    public string TableRowCellColor( Color color ) => null;
 
-        #endregion
+    public string TableRowGroup( bool expanded ) => null;
 
-        #region Text
+    public string TableRowGroupCell() => null;
 
-        public string TextColor( TextColor textColor ) => null;
+    public string TableRowGroupIndentCell() => null;
 
-        public string TextAlignment( TextAlignment textAlignment ) => null;
+    public string TableResponsive() => null;
 
-        public string TextTransform( TextTransform textTransform ) => null;
+    public string TableFixedHeader() => null;
 
-        public string TextWeight( TextWeight textWeight ) => null;
+    #endregion
 
-        public string TextOverflow( TextOverflow textOverflow ) => null;
+    #region Badge
 
-        public string TextItalic() => null;
+    public string Badge() => null;
 
-        #endregion
+    public string BadgeColor( Color color ) => null;
 
-        #region Code
+    public string BadgePill() => null;
 
-        public string Code() => null;
+    public string BadgeClose() => null;
 
-        #endregion
+    #endregion
 
-        #region Heading
+    #region Media
 
-        public string HeadingSize( HeadingSize headingSize ) => null;
+    public string Media() => null;
 
-        #endregion
+    public string MediaLeft() => null;
 
-        #region DisplayHeading
+    public string MediaRight() => null;
 
-        public string DisplayHeadingSize( DisplayHeadingSize displayHeadingSize ) => null;
+    public string MediaBody() => null;
 
-        #endregion
+    #endregion
 
-        #region Paragraph
+    #region Text
 
-        public string Paragraph() => null;
+    public string TextColor( TextColor textColor ) => null;
 
-        public string ParagraphColor( TextColor textColor ) => null;
+    public string TextAlignment( TextAlignment textAlignment ) => null;
 
-        #endregion
+    public string TextTransform( TextTransform textTransform ) => null;
 
-        #region Blockquote
+    public string TextWeight( TextWeight textWeight ) => null;
 
-        public string Blockquote() => null;
+    public string TextOverflow( TextOverflow textOverflow ) => null;
 
-        public string BlockquoteFooter() => null;
+    public string TextItalic() => null;
 
-        #endregion
+    #endregion
 
-        #region Figure
+    #region Code
 
-        public string Figure() => null;
+    public string Code() => null;
 
-        public string FigureSize( FigureSize figureSize ) => null;
+    #endregion
 
-        public string FigureImage() => null;
+    #region Heading
 
-        public string FigureImageRounded() => null;
+    public string HeadingSize( HeadingSize headingSize ) => null;
 
-        public string FigureCaption() => null;
+    #endregion
 
-        #endregion
+    #region DisplayHeading
 
-        #region Image
+    public string DisplayHeadingSize( DisplayHeadingSize displayHeadingSize ) => null;
 
-        public string Image() => null;
+    #endregion
 
-        public string ImageFluid( bool fluid ) => null;
+    #region Lead
 
-        #endregion
+    public string Lead() => null;
 
-        #region Breadcrumb
+    #endregion
 
-        public string Breadcrumb() => null;
+    #region Paragraph
 
-        public string BreadcrumbItem() => null;
+    public string Paragraph() => null;
 
-        public string BreadcrumbItemActive() => null;
+    public string ParagraphColor( TextColor textColor ) => null;
 
-        public string BreadcrumbLink() => null;
+    #endregion
 
-        #endregion
+    #region Blockquote
 
-        #region Tooltip
+    public string Blockquote() => null;
 
-        public string Tooltip() => null;
+    public string BlockquoteFooter() => null;
 
-        public string TooltipPlacement( TooltipPlacement tooltipPlacement ) => null;
+    #endregion
 
-        public string TooltipMultiline() => null;
+    #region Figure
 
-        public string TooltipAlwaysActive() => null;
+    public string Figure() => null;
 
-        public string TooltipFade() => null;
+    public string FigureSize( FigureSize figureSize ) => null;
 
-        public string TooltipInline() => null;
+    public string FigureImage() => null;
 
-        #endregion
+    public string FigureImageRounded() => null;
 
-        #region Divider
+    public string FigureCaption() => null;
 
-        public string Divider() => null;
+    #endregion
 
-        public string DividerType( DividerType dividerType ) => null;
+    #region Image
 
-        #endregion
+    public string Image() => null;
 
-        #region States
+    public string ImageFluid( bool fluid ) => null;
 
-        public string Show() => null;
+    #endregion
 
-        public string Fade() => null;
+    #region Breadcrumb
 
-        public string Active() => null;
+    public string Breadcrumb() => null;
 
-        public string Disabled() => null;
+    public string BreadcrumbItem() => null;
 
-        public string Collapsed() => null;
+    public string BreadcrumbItemActive() => null;
 
-        #endregion
+    public string BreadcrumbLink() => null;
 
-        #region Layout
+    #endregion
 
-        public string Spacing( Spacing spacing, SpacingSize spacingSize, Side side, Breakpoint breakpoint ) => null;
+    #region Tooltip
 
-        public string Spacing( Spacing spacing, SpacingSize spacingSize, IEnumerable<(Side side, Breakpoint breakpoint)> rules ) => null;
+    public string Tooltip() => null;
 
-        #endregion
+    public string TooltipPlacement( TooltipPlacement tooltipPlacement ) => null;
 
-        #region Borders
+    public string TooltipMultiline() => null;
 
-        public string Border( BorderSize borderSize, BorderSide borderSide, BorderColor borderColor ) => null;
+    public string TooltipAlwaysActive() => null;
 
-        public string Border( BorderSize borderSize, IEnumerable<(BorderSide borderSide, BorderColor borderColor)> rules ) => null;
+    public string TooltipFade() => null;
 
-        public string BorderRadius( BorderRadius borderRadius ) => null;
+    public string TooltipInline() => null;
 
-        #endregion
+    #endregion
 
-        #region Flex
+    #region Divider
 
-        public string Flex( FlexType flexType ) => null;
+    public string Divider() => null;
 
-        public string Flex( FlexDefinition flexDefinition ) => null;
+    public string DividerType( DividerType dividerType ) => null;
 
-        public string Flex( FlexType flexType, IEnumerable<FlexDefinition> flexDefinitions ) => null;
+    #endregion
 
-        public string FlexAlignment( Alignment alignment ) => null;
+    #region Link
 
-        #endregion
+    public string Link() => null;
 
-        #region Sizing
+    public string LinkActive( bool active ) => null;
 
-        public string Sizing( SizingType sizingType, SizingSize sizingSize, SizingDefinition sizingDefinition ) => null;
+    #endregion
 
-        #endregion
+    #region States
 
-        #region Float
+    public string Show() => null;
 
-        public string Float( Float @float ) => null;
+    public string Fade() => null;
 
-        public string Clearfix() => null;
+    public string Active() => null;
 
-        #endregion
+    public string Disabled() => null;
 
-        #region Visibility
+    public string Collapsed() => null;
 
-        public string Visibility( Visibility visibility ) => null;
+    #endregion
 
-        #endregion
+    #region Layout
 
-        #region VerticalAlignment
+    public string Spacing( Spacing spacing, SpacingSize spacingSize, Side side, Breakpoint breakpoint ) => null;
 
-        public string VerticalAlignment( VerticalAlignment verticalAlignment ) => null;
+    public string Spacing( Spacing spacing, SpacingSize spacingSize, IEnumerable<(Side side, Breakpoint breakpoint)> rules ) => null;
 
-        #endregion
+    #endregion
 
-        #region Shadow
+    #region Gap
 
-        public string Shadow( Shadow shadow ) => null;
+    public string Gap( GapSize gapSize, GapSide gapSide ) => null;
 
-        #endregion
+    public string Gap( GapSize gapSize, IEnumerable<GapSide> rules ) => null;
 
-        #region Overflow
+    #endregion
 
-        public string Overflow( OverflowType overflowType, OverflowType secondOverflowType ) => null;
+    #region Borders
 
-        #endregion
+    public string Border( BorderSize borderSize, BorderSide borderSide, BorderColor borderColor ) => null;
 
-        #region Position
+    public string Border( BorderSize borderSize, IEnumerable<(BorderSide borderSide, BorderColor borderColor)> rules ) => null;
 
-        public string Position( PositionType positionType, PositionEdgeType edgeType, int edgeOffset, PositionTranslateType translateType ) => null;
+    public string BorderRadius( BorderRadius borderRadius ) => null;
 
-        public string Position( PositionType positionType, IEnumerable<(PositionEdgeType edgeType, int edgeOffset)> edges, PositionTranslateType translateType ) => null;
+    #endregion
 
-        #endregion
+    #region Flex
 
-        #region Custom
+    public string Flex( FlexType flexType ) => null;
 
-        public string Casing( CharacterCasing characterCasing ) => null;
+    public string Flex( FlexDefinition flexDefinition ) => null;
 
-        #endregion
+    public string Flex( FlexType flexType, IEnumerable<FlexDefinition> flexDefinitions ) => null;
 
-        #region Elements
+    public string FlexAlignment( Alignment alignment ) => null;
 
-        public string UnorderedList() => null;
+    #endregion
 
-        public string UnorderedListUnstyled( bool unstyled ) => null;
+    #region Sizing
 
-        public string OrderedList() => null;
+    public string Sizing( SizingType sizingType, SizingSize sizingSize, SizingDefinition sizingDefinition ) => null;
 
-        public string OrderedListUnstyled( bool unstyled ) => null;
+    #endregion
 
-        public string OrderedListType( OrderedListType orderedListType ) => null;
+    #region Float
 
-        public string DescriptionList() => null;
+    public string Float( Float @float ) => null;
 
-        public string DescriptionListTerm() => null;
+    public string Clearfix() => null;
 
-        public string DescriptionListDefinition() => null;
+    #endregion
 
-        #endregion
+    #region Visibility
 
-        #region Enums
+    public string Visibility( Visibility visibility ) => null;
 
-        public string ToSize( Size size ) => null;
+    #endregion
 
-        public string ToBreakpoint( Breakpoint breakpoint ) => null;
+    #region VerticalAlignment
 
-        public string ToColor( Color color ) => null;
+    public string VerticalAlignment( VerticalAlignment verticalAlignment ) => null;
 
-        public string ToBackground( Background background ) => null;
+    #endregion
 
-        public string ToTextColor( TextColor textColor ) => null;
+    #region Shadow
 
-        public string ToThemeContrast( ThemeContrast themeContrast ) => null;
+    public string Shadow( Shadow shadow ) => null;
 
-        public string ToFloat( Float @float ) => null;
+    #endregion
 
-        public string ToBorderRadius( BorderRadius borderRadius ) => null;
+    #region Overflow
 
-        public string ToSpacing( Spacing spacing ) => null;
+    public string Overflow( OverflowType overflowType, OverflowType secondOverflowType ) => null;
 
-        public string ToSide( Side side ) => null;
+    #endregion
 
-        public string ToAlignment( Alignment alignment ) => null;
+    #region Position
 
-        public string ToTextAlignment( TextAlignment textAlignment ) => null;
+    public string Position( PositionType positionType, PositionEdgeType edgeType, int edgeOffset, PositionTranslateType translateType ) => null;
 
-        public string ToTextTransform( TextTransform textTransform ) => null;
+    public string Position( PositionType positionType, IEnumerable<(PositionEdgeType edgeType, int edgeOffset)> edges, PositionTranslateType translateType ) => null;
 
-        public string ToTextWeight( TextWeight textWeight ) => null;
+    #endregion
 
-        public string ToTextOverflow( TextOverflow textOverflow ) => null;
+    #region Custom
 
-        public string ToColumnWidth( ColumnWidth columnWidth ) => null;
+    public string Casing( CharacterCasing characterCasing ) => null;
 
-        public string ToDisplayType( DisplayType displayType ) => null;
+    #endregion
 
-        public string ToDisplayDirection( DisplayDirection displayDirection ) => null;
+    #region Elements
 
-        public string ToModalSize( ModalSize modalSize ) => null;
+    public string UnorderedList() => null;
 
-        public string ToSpacingSize( SpacingSize spacingSize ) => null;
+    public string UnorderedListUnstyled( bool unstyled ) => null;
 
-        public string ToJustifyContent( JustifyContent justifyContent ) => null;
+    public string OrderedList() => null;
 
-        public string ToScreenreader( Screenreader screenreader ) => null;
+    public string OrderedListUnstyled( bool unstyled ) => null;
 
-        public string ToHeadingSize( HeadingSize headingSize ) => null;
+    public string OrderedListType( OrderedListType orderedListType ) => null;
 
-        public string ToDisplayHeadingSize( DisplayHeadingSize displayHeadingSize ) => null;
+    public string DescriptionList() => null;
 
-        public string ToJumbotronTitleSize( JumbotronTitleSize jumbotronTitleSize ) => null;
+    public string DescriptionListTerm() => null;
 
-        public string ToPlacement( Placement placement ) => null;
+    public string DescriptionListDefinition() => null;
 
-        public string ToTooltipPlacement( TooltipPlacement tooltipPlacement ) => null;
+    #endregion
 
-        public string ToFigureSize( FigureSize figureSize ) => null;
+    #region Enums
 
-        public string ToCharacterCasing( CharacterCasing characterCasing ) => null;
+    public string ToSize( Size size ) => null;
 
-        public string ToBarMode( BarMode mode ) => null;
+    public string ToBreakpoint( Breakpoint breakpoint ) => null;
 
-        public string ToBarCollapsedMode( BarCollapseMode collapseMode ) => null;
+    public string ToColor( Color color ) => null;
 
-        public string ToDirection( FlexDirection direction ) => null;
+    public string ToBackground( Background background ) => null;
 
-        public string ToJustifyContent( FlexJustifyContent justifyContent ) => null;
+    public string ToTextColor( TextColor textColor ) => null;
 
-        public string ToAlignItems( FlexAlignItems alignItems ) => null;
+    public string ToThemeContrast( ThemeContrast themeContrast ) => null;
 
-        public string ToAlignSelf( FlexAlignSelf alignSelf ) => null;
+    public string ToFloat( Float @float ) => null;
 
-        public string ToAlignContent( FlexAlignContent alignContent ) => null;
+    public string ToBorderRadius( BorderRadius borderRadius ) => null;
 
-        public string ToGrowShrink( FlexGrowShrink growShrink ) => null;
+    public string ToSpacing( Spacing spacing ) => null;
 
-        public string ToGrowShrinkSize( FlexGrowShrinkSize growShrinkSize ) => null;
+    public string ToSide( Side side ) => null;
 
-        public string ToWrap( FlexWrap wrap ) => null;
+    public string ToAlignment( Alignment alignment ) => null;
 
-        public string ToOrder( FlexOrder order ) => null;
+    public string ToTextAlignment( TextAlignment textAlignment ) => null;
 
-        public string ToSizingType( SizingType sizingType ) => null;
+    public string ToTextTransform( TextTransform textTransform ) => null;
 
-        public string ToSizingSize( SizingSize sizingSize ) => null;
+    public string ToTextWeight( TextWeight textWeight ) => null;
 
-        public string ToVerticalAlignment( VerticalAlignment verticalAlignment ) => null;
+    public string ToTextOverflow( TextOverflow textOverflow ) => null;
 
-        public string ToShadow( Shadow shadow ) => null;
+    public string ToColumnWidth( ColumnWidth columnWidth ) => null;
 
-        public string ToOrderedListType( OrderedListType orderedListType ) => null;
+    public string ToDisplayType( DisplayType displayType ) => null;
 
-        public string ToPositionType( PositionType positionType ) => null;
+    public string ToDisplayDirection( DisplayDirection displayDirection ) => null;
 
-        public string ToPositionEdgeType( PositionEdgeType positionEdgeType ) => null;
+    public string ToModalSize( ModalSize modalSize ) => null;
 
-        public string ToPositionTranslateType( PositionTranslateType positionTranslateType ) => null;
+    public string ToSpacingSize( SpacingSize spacingSize ) => null;
 
-        #endregion
+    public string ToGapSize( GapSize gapSize ) => null;
 
-        #region Properties
+    public string ToJustifyContent( JustifyContent justifyContent ) => null;
 
-        public bool UseCustomInputStyles { get; set; } = false;
+    public string ToScreenreader( Screenreader screenreader ) => null;
 
-        public string Provider => "EmptyClassProvider";
+    public string ToHeadingSize( HeadingSize headingSize ) => null;
 
-        #endregion
-    }
+    public string ToDisplayHeadingSize( DisplayHeadingSize displayHeadingSize ) => null;
+
+    public string ToJumbotronTitleSize( JumbotronTitleSize jumbotronTitleSize ) => null;
+
+    public string ToPlacement( Placement placement ) => null;
+
+    public string ToTooltipPlacement( TooltipPlacement tooltipPlacement ) => null;
+
+    public string ToFigureSize( FigureSize figureSize ) => null;
+
+    public string ToCharacterCasing( CharacterCasing characterCasing ) => null;
+
+    public string ToBarMode( BarMode mode ) => null;
+
+    public string ToBarCollapsedMode( BarCollapseMode collapseMode ) => null;
+
+    public string ToDirection( FlexDirection direction ) => null;
+
+    public string ToJustifyContent( FlexJustifyContent justifyContent ) => null;
+
+    public string ToAlignItems( FlexAlignItems alignItems ) => null;
+
+    public string ToAlignSelf( FlexAlignSelf alignSelf ) => null;
+
+    public string ToAlignContent( FlexAlignContent alignContent ) => null;
+
+    public string ToGrowShrink( FlexGrowShrink growShrink ) => null;
+
+    public string ToGrowShrinkSize( FlexGrowShrinkSize growShrinkSize ) => null;
+
+    public string ToWrap( FlexWrap wrap ) => null;
+
+    public string ToOrder( FlexOrder order ) => null;
+
+    public string ToSizingType( SizingType sizingType ) => null;
+
+    public string ToSizingSize( SizingSize sizingSize ) => null;
+
+    public string ToVerticalAlignment( VerticalAlignment verticalAlignment ) => null;
+
+    public string ToShadow( Shadow shadow ) => null;
+
+    public string ToOrderedListType( OrderedListType orderedListType ) => null;
+
+    public string ToPositionType( PositionType positionType ) => null;
+
+    public string ToPositionEdgeType( PositionEdgeType positionEdgeType ) => null;
+
+    public string ToPositionTranslateType( PositionTranslateType positionTranslateType ) => null;
+
+    #endregion
+
+    #region Properties
+
+    public bool UseCustomInputStyles { get; set; } = false;
+
+    public string Provider => "EmptyClassProvider";
+
+    #endregion
 }

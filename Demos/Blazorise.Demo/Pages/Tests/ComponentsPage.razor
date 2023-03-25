@@ -8,7 +8,7 @@
                 <CardTitle>Select List</CardTitle>
             </CardHeader>
             <CardBody>
-                <Field Horizontal="true" JustifyContent="JustifyContent.End">
+                <Field Horizontal JustifyContent="JustifyContent.End">
                     <FieldLabel ColumnSize="ColumnSize.Is2">Select Value</FieldLabel>
                     <FieldBody ColumnSize="ColumnSize.Is10">
                         <SelectList TItem="Country"
@@ -20,9 +20,29 @@
                                     DefaultItemText="Choose your country" />
                     </FieldBody>
                 </Field>
-                <Field Horizontal="true" JustifyContent="JustifyContent.End">
+                <Field Horizontal JustifyContent="JustifyContent.End">
                     <FieldBody ColumnSize="ColumnSize.Is10.Is2.WithOffset">
                         Selected value: @selectedListValue
+                    </FieldBody>
+                </Field>
+            </CardBody>
+            <CardBody>
+                <Field Horizontal JustifyContent="JustifyContent.End">
+                    <FieldLabel ColumnSize="ColumnSize.Is2">Multiple Values</FieldLabel>
+                    <FieldBody ColumnSize="ColumnSize.Is10">
+                        <SelectList TItem="Country"
+                                    TValue="string"
+                                    Data="@Countries"
+                                    TextField="@(( item ) => item.Name)"
+                                    ValueField="@((item) => item.Iso)"
+                                    Multiple
+                                    @bind-SelectedValues="@multipleSelectedListValue"
+                                    DefaultItemText="Choose your country" />
+                    </FieldBody>
+                </Field>
+                <Field Horizontal JustifyContent="JustifyContent.End">
+                    <FieldBody ColumnSize="ColumnSize.Is10.Is2.WithOffset">
+                        Selected values: @string.Join(", ", multipleSelectedListValue ?? Enumerable.Empty<string>())
                     </FieldBody>
                 </Field>
             </CardBody>
@@ -34,7 +54,7 @@
                 <CardTitle>Dropdown List</CardTitle>
             </CardHeader>
             <CardBody>
-                <Field Horizontal="true" JustifyContent="JustifyContent.End">
+                <Field Horizontal JustifyContent="JustifyContent.End">
                     <FieldLabel ColumnSize="ColumnSize.Is2">Select Value</FieldLabel>
                     <FieldBody ColumnSize="ColumnSize.Is10">
                         <DropdownList TItem="Country"
@@ -44,12 +64,12 @@
                                       ValueField="@((item) => item.Iso)"
                                       @bind-SelectedValue="@selectedDropValue"
                                       Color="Color.Primary"
-                                      MaxMenuHeight="200px"  >
+                                      MaxMenuHeight="200px">
                             Select item
                         </DropdownList>
                     </FieldBody>
                 </Field>
-                <Field Horizontal="true" JustifyContent="JustifyContent.End">
+                <Field Horizontal JustifyContent="JustifyContent.End">
                     <FieldBody ColumnSize="ColumnSize.Is10.Is2.WithOffset">
                         Selected value: @selectedDropValue
                     </FieldBody>
@@ -58,103 +78,15 @@
         </Card>
     </Column>
 </Row>
-<Row>
-    <Column ColumnSize="ColumnSize.IsFull.OnMobile.IsHalf.OnTablet">
-        <Card Margin="Margin.Is4.OnY">
-            <CardHeader>
-                <CardTitle>Autocomplete</CardTitle>
-            </CardHeader>
-            <CardBody>
-                <Field>
-                    <FieldBody>
-                        <Check @bind-Checked="@autocompleteFreeTyping">FreeTyping</Check>
-                    </FieldBody>
-                </Field>
-                <Field Horizontal="true" JustifyContent="JustifyContent.End">
-                    <FieldLabel ColumnSize="ColumnSize.Is2">Select Value</FieldLabel>
-                    <FieldBody ColumnSize="ColumnSize.Is10">
-                        <Autocomplete TItem="Country"
-                                      TValue="string"
-                                      Data="@Countries"
-                                      TextField="@(( item ) => item.Name)"
-                                      ValueField="@((item) => item.Iso)"
-                                      @bind-SelectedValue="selectedAutoCompleteSearchValue"
-                                      @bind-SelectedText="selectedAutoCompleteText"
-                                      Placeholder="Search..."
-                                      Filter="AutocompleteFilter.StartsWith"
-                                      FreeTyping="autocompleteFreeTyping"
-                                      CustomFilter="@(( item, searchValue ) => item.Name.IndexOf( searchValue, 0, StringComparison.CurrentCultureIgnoreCase ) >= 0 )">
-                            <NotFoundContent> Sorry... @context was not found! :( </NotFoundContent>
-                            <ItemContent>
-                                <Div Flex="Flex.InlineFlex.JustifyContent.Between" Width="Width.Is100">
-                                    <Heading Margin="Margin.Is2.FromBottom">@context.Value</Heading>
-                                    <Small>@context.Item.Capital</Small>
-                                </Div>
-                                <Paragraph Margin="Margin.Is2.FromBottom">@context.Text</Paragraph>
-                            </ItemContent>
-                        </Autocomplete>
-                    </FieldBody>
-                </Field>
-                <Field Horizontal="true" JustifyContent="JustifyContent.End">
-                    <FieldBody ColumnSize="ColumnSize.Is10.Is2.WithOffset">
-                        Selected search value: @selectedAutoCompleteSearchValue
-                    </FieldBody>
-                    <FieldBody ColumnSize="ColumnSize.Is10.Is2.WithOffset">
-                        Selected text value: @selectedAutoCompleteText
-                    </FieldBody>
-                </Field>
-            </CardBody>
-        </Card>
-    </Column>
-    <Column ColumnSize="ColumnSize.IsFull.OnMobile.IsHalf.OnTablet">
-        <Card Margin="Margin.Is4.OnY">
-            <CardHeader>
-                <CardTitle>Autocomplete Multiple Selection</CardTitle>
-            </CardHeader>
-            <CardBody>
-                <Field>
-                    <FieldBody>
-                        <Check @bind-Checked="@multipleAutocompleteFreeTyping">FreeTyping</Check>
-                    </FieldBody>
-                </Field>
-                <Field Horizontal="true" JustifyContent="JustifyContent.End">
-                    <FieldLabel ColumnSize="ColumnSize.Is2">Select Values</FieldLabel>
-                    <FieldBody ColumnSize="ColumnSize.Is10">
-                        <Autocomplete TItem="Country"
-                                      TValue="string"
-                                      Data="@Countries"
-                                      TextField="@(( item ) => item.Name)"
-                                      ValueField="@((item) => item.Iso)"
-                                      Placeholder="Search..."
-                                      Multiple
-                                      FreeTyping="multipleAutocompleteFreeTyping"
-                                      @bind-SelectedValues="multipleSelectionData"
-                                      @bind-SelectedTexts="multipleSelectionTexts">
-                        </Autocomplete>
-                    </FieldBody>
-                </Field>
-                <Field Horizontal="true" JustifyContent="JustifyContent.End">
-                    <FieldBody ColumnSize="ColumnSize.Is10.Is2.WithOffset">
-                        Selected Values: @string.Join(',', multipleSelectionData)
-                    </FieldBody>
-                    <FieldBody ColumnSize="ColumnSize.Is10.Is2.WithOffset">
-                        Selected Texts: @string.Join(',', multipleSelectionTexts)
-                    </FieldBody>
-                </Field>
-            </CardBody>
-        </Card>
-    </Column>
-</Row>
-<Row>
 
-
+<Row>
     <Column ColumnSize="ColumnSize.IsFull.OnMobile.IsHalf.OnTablet">
         <Card Margin="Margin.Is4.FromBottom">
             <CardHeader>
                 <CardTitle>Repeater</CardTitle>
             </CardHeader>
             <CardBody>
-                <Field Horizontal="true" JustifyContent="JustifyContent.End">
+                <Field Horizontal JustifyContent="JustifyContent.End">
                     <FieldLabel ColumnSize="ColumnSize.Is6">
                         <Buttons>
                             <Button Color="Color.Primary" Clicked="@(() => items.Add( items.Count + 1 ) )">Add</Button>
@@ -176,7 +108,7 @@
                         </Dropdown>
                     </FieldBody>
                 </Field>
-                <Field Horizontal="true" JustifyContent="JustifyContent.End">
+                <Field Horizontal JustifyContent="JustifyContent.End">
                     <FieldBody ColumnSize="ColumnSize.Is12">
                         <ul>
                             <Repeater Items="@items">
@@ -198,10 +130,11 @@
                           Data="@Countries"
                           @bind-SelectedItem="@selectedListViewItem"
                           TextField="@((item) => item.Name)"
+                          ValueField="@((item) => item.Iso)"
                           Mode="ListGroupMode.Selectable">
                 </ListView>
                 <Paragraph Margin="Margin.Is3.FromTop">
-                    Selected Item Text: @selectedListViewItem?.Name
+                    Selected Item: @selectedListViewItem?.Name
                 </Paragraph>
             </CardBody>
         </Card>
@@ -212,18 +145,12 @@
     [Inject]
     public CountryData CountryData { get; set; }
     public IEnumerable<Country> Countries;
-
-    private string selectedAutoCompleteSearchValue { get; set; }
-    private string selectedAutoCompleteText { get; set; }
-    private bool autocompleteFreeTyping = false;
-
-    private List<string> multipleSelectionData;
-    private List<string> multipleSelectionTexts = new();
-    private bool multipleAutocompleteFreeTyping = false;
-
+    public IEnumerable<Country> ReadDataCountries;
 
     private string selectedListValue { get; set; }
     private string selectedDropValue { get; set; } = "2";
+
+    private IReadOnlyList<string> multipleSelectedListValue { get; set; }
 
     private Country selectedListViewItem { get; set; }
 
@@ -233,7 +160,6 @@
     protected override async Task OnInitializedAsync()
     {
         Countries = await CountryData.GetDataAsync();
-        multipleSelectionData = new List<string>() { Countries.ElementAt( 1 ).Iso.ToString(), Countries.ElementAt( 3 ).Iso.ToString() };
         await base.OnInitializedAsync();
     }
 

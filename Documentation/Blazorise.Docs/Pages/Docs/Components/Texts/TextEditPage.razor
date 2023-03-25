@@ -1,10 +1,14 @@
 ﻿@page "/docs/components/text"
 
-<Seo Canonical="/docs/components/text" Title="Blazorise TextEdit component" Description="TextEdit fields components are used for collecting user provided information." />
+<Seo Canonical="/docs/components/text" Title="Blazorise TextEdit component" Description="Learn to use and work with the Blazorise TextEdit components, which is used for collecting user provided information." />
 
-<DocsPageTitle>
-    TextEdit component
+<DocsPageTitle Path="Components/Text Edit">
+    Blazorise TextEdit component
 </DocsPageTitle>
+
+<DocsPageLead>
+    The <Code>TextEdit</Code> allows the user to input and edit text.
+</DocsPageLead>
 
 <DocsPageParagraph>
     <Code Tag>TextEdit</Code> fields components are used for collecting user provided information.
@@ -135,7 +139,7 @@
     <DocsPageSectionHeader Title="Text Changed mode">
         By default the <Code>TextChanged</Code> event will be raised on every keypress.
         To override default behavior of <Code>TextChanged</Code> event and to disable the change on every
-        keypress you must set the <Code>ChangeTextOnKeyPress</Code> to <Code>false</Code> on application start.
+        keypress you must set the <Code>Immediate</Code> to <Code>false</Code> on application start.
         After setting it to <Code>false</Code> the event will be raised only after the input loses focus.
     </DocsPageSectionHeader>
     <DocsPageSectionSource Code="TextEditTextChangedModeExample" />
@@ -143,9 +147,9 @@
 
 <DocsPageSection>
     <DocsPageSectionHeader Title="Text Delay mode">
-        Because of some limitations in Blazor, sometimes there can be problems when <Code>ChangeTextOnKeyPress</Code> is enabled.
+        Because of some limitations in Blazor, sometimes there can be problems when <Code>Immediate</Code> is enabled.
         Basically if you try to type too fast into the text field the caret can jump randomly from current selection
-        to the end of the text. To prevent that behaviour you need to enable <Code>DelayTextOnKeyPress</Code>. Once enabled it will
+        to the end of the text. To prevent that behaviour you need to enable <Code>Debounce</Code>. Once enabled it will
         slightly delay every value entered into the field to allow the Blazor engine to do it’s thing.
         By default this option is disabled.
     </DocsPageSectionHeader>
@@ -160,8 +164,12 @@
 </Alert>
 
 <DocsPageSubtitle>
-    Attributes
+    API
 </DocsPageSubtitle>
+
+<Heading Size="HeadingSize.Is3">
+    Attributes
+</Heading>
 
 <DocsAttributes>
     <DocsAttributesItem Name="Role" Type="TextRole" Default="Text">
@@ -191,10 +199,10 @@
     <DocsAttributesItem Name="Pattern" Type="string" Default="null">
         Specifies a regular expression that the input element’s value is checked against on form validation.
     </DocsAttributesItem>
-    <DocsAttributesItem Name="Color" Type="Color" Default="None">
+    <DocsAttributesItem Name="Color" Type="Color" Default="Default">
         Component visual or contextual style variants.
     </DocsAttributesItem>
-    <DocsAttributesItem Name="Size" Type="Size" Default="None">
+    <DocsAttributesItem Name="Size" Type="Size" Default="Default">
         Component size variations.
     </DocsAttributesItem>
     <DocsAttributesItem Name="EditMask" Type="" Default="">
@@ -206,17 +214,14 @@
     <DocsAttributesItem Name="VisibleCharacters" Type="int?" Default="null">
         Specifies the visible width, in characters, of an <Code Tag>input</Code> element.
     </DocsAttributesItem>
-    <DocsAttributesItem Name="ChangeTextOnKeyPress" Type="bool?" Default="null">
+    <DocsAttributesItem Name="Immediate" Type="bool?" Default="null">
         If true the text in will be changed after each key press (overrides global settings).
     </DocsAttributesItem>
-    <DocsAttributesItem Name="DelayTextOnKeyPress" Type="bool?" Default="null">
+    <DocsAttributesItem Name="Debounce" Type="bool?" Default="null">
         If true the entered text will be slightly delayed before submitting it to the internal value.
     </DocsAttributesItem>
-    <DocsAttributesItem Name="DelayTextOnKeyPressInterval" Type="bool?" Default="null">
+    <DocsAttributesItem Name="DebounceInterval" Type="bool?" Default="null">
         Interval in milliseconds that entered text will be delayed from submitting to the internal value.
-    </DocsAttributesItem>
-    <DocsAttributesItem Name="KeyDown" Type="EventCallback<KeyboardEventArgs>">
-        Occurs when a key is pressed down while the control has focus.
     </DocsAttributesItem>
     <DocsAttributesItem Name="KeyDown" Type="EventCallback<KeyboardEventArgs>">
         Occurs when a key is pressed down while the control has focus.
@@ -227,13 +232,13 @@
     <DocsAttributesItem Name="KeyUp" Type="EventCallback<KeyboardEventArgs>">
         Occurs when a key is released while the control has focus.
     </DocsAttributesItem>
-    <DocsAttributesItem Name="OnFocus" Type="EventCallback<KeyboardEventArgs>">
+    <DocsAttributesItem Name="OnFocus" Type="EventCallback<FocusEventArgs>">
         Occurs when the input box gains focus.
     </DocsAttributesItem>
-    <DocsAttributesItem Name="FocusIn" Type="EventCallback<KeyboardEventArgs>">
+    <DocsAttributesItem Name="FocusIn" Type="EventCallback<FocusEventArgs>">
         Occurs when the input box gains focus.
     </DocsAttributesItem>
-    <DocsAttributesItem Name="FocusOut" Type="EventCallback<KeyboardEventArgs>">
+    <DocsAttributesItem Name="FocusOut" Type="EventCallback<FocusEventArgs>">
         Occurs when the input box loses focus.
     </DocsAttributesItem>
     <DocsAttributesItem Name="Autofocus" Type="bool" Default="false">

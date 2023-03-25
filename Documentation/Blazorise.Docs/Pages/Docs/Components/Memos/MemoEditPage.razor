@@ -1,18 +1,18 @@
 ﻿@page "/docs/components/memo"
 
-<Seo Canonical="/docs/components/memo" Title="Blazorise MemoEdit system" Description="MemoEdit is used to create multiline text input (textarea)." />
+<Seo Canonical="/docs/components/memo" Title="Blazorise MemoEdit system" Description="Learn to use and work with the Blazorise MemoEdit component, which is used to create multiline text input (textarea)." />
 
-<DocsPageTitle>
-    MemoEdit component
+<DocsPageTitle Path="Components/Memo Edit">
+    Blazorise MemoEdit component
 </DocsPageTitle>
 
-<DocsPageParagraph>
-    MemoEdit is used to create multiline text input (<Code Tag>textarea</Code>).
-</DocsPageParagraph>
+<DocsPageLead>
+    MemoEdit collect data from the user and allow multiple lines of text.
+</DocsPageLead>
 
-<DocsPageSubtitle>
-    Examples
-</DocsPageSubtitle>
+<DocsPageParagraph>
+    MemoEdit is an input field component for multi-line text input based on a <Code Tag>textarea</Code> element.
+</DocsPageParagraph>
 
 <DocsPageSection>
     <DocsPageSectionHeader Title="Basic">
@@ -36,7 +36,7 @@
 
 <DocsPageSection>
     <DocsPageSectionHeader Title="Auto size">
-        If you want to grow the <Code>MemoEdit</Code> along with its content they you just need to define an <Code>AutoSize</Code> parameter.
+        Unless set to a fixed height, MemoEdit adjusts its height automatically based on its content. The default and minimum height is two rows of text.
     </DocsPageSectionHeader>
     <DocsPageSectionContent Outlined FullWidth>
         <MemoEditAutoSizeExample />
@@ -76,7 +76,7 @@
     <DocsPageSectionHeader Title="Text Changed mode">
         By default the <Code>TextChanged</Code> event will be raised on every keypress.
         To override default behavior of <Code>TextChanged</Code> event and to disable the change on every
-        keypress you must set the <Code>ChangeTextOnKeyPress</Code> to <Code>false</Code> on application start.
+        keypress you must set the <Code>Immediate</Code> to <Code>false</Code> on application start.
         After setting it to <Code>false</Code> the event will be raised only after the input loses focus.
     </DocsPageSectionHeader>
     <DocsPageSectionSource Code="MemoEditTextChangedModeExample" />
@@ -84,9 +84,9 @@
 
 <DocsPageSection>
     <DocsPageSectionHeader Title="Text Delay mode">
-        Because of some limitations in Blazor, sometimes there can be problems when <Code>ChangeTextOnKeyPress</Code> is enabled.
+        Because of some limitations in Blazor, sometimes there can be problems when <Code>Immediate</Code> is enabled.
         Basically if you try to type too fast into the text field the caret can jump randomly from current selection
-        to the end of the text. To prevent that behaviour you need to enable <Code>DelayTextOnKeyPress</Code>. Once enabled it will
+        to the end of the text. To prevent that behaviour you need to enable <Code>Debounce</Code>. Once enabled it will
         slightly delay every value entered into the field to allow the Blazor engine to do it’s thing.
         By default this option is disabled.
     </DocsPageSectionHeader>
@@ -101,8 +101,12 @@
 </Alert>
 
 <DocsPageSubtitle>
-    Attributes
+    API
 </DocsPageSubtitle>
+
+<Heading Size="HeadingSize.Is3">
+    Attributes
+</Heading>
 
 <DocsAttributes>
     <DocsAttributesItem Name="Text" Type="string" Default="null">
@@ -129,16 +133,16 @@
     <DocsAttributesItem Name="Rows" Type="int?" Default="null">
         Specifies the number lines in the input element.
     </DocsAttributesItem>
-    <DocsAttributesItem Name="Size" Type="Size" Default="">
+    <DocsAttributesItem Name="Size" Type="Size" Default="Default">
         Component size variations.
     </DocsAttributesItem>
-    <DocsAttributesItem Name="ChangeTextOnKeyPress" Type="bool?" Default="null">
+    <DocsAttributesItem Name="Immediate" Type="bool?" Default="null">
         If true the text in will be changed after each key press (overrides global settings).
     </DocsAttributesItem>
-    <DocsAttributesItem Name="DelayTextOnKeyPress" Type="bool?" Default="null">
+    <DocsAttributesItem Name="Debounce" Type="bool?" Default="null">
         If true the entered text will be slightly delayed before submitting it to the internal value.
     </DocsAttributesItem>
-    <DocsAttributesItem Name="DelayTextOnKeyPressInterval" Type="bool?" Default="null">
+    <DocsAttributesItem Name="DebounceInterval" Type="bool?" Default="null">
         Interval in milliseconds that entered text will be delayed from submitting to the internal value.
     </DocsAttributesItem>
     <DocsAttributesItem Name="ReplaceTab" Type="bool" Default="false">
@@ -152,5 +156,10 @@
     </DocsAttributesItem>
     <DocsAttributesItem Name="AutoSize" Type="bool" Default="false">
         If true, the textarea will automatically grow in height according to its content.
+    </DocsAttributesItem>
+    <DocsAttributesItem Name="Pattern" Type="string" Default="null">
+        The pattern attribute specifies a regular expression that the input element's value is checked against on form validation.
+        <br />
+        Please be aware that <Code>Pattern</Code> on <Code>MemoEdit</Code> is used only for the validation process.
     </DocsAttributesItem>
 </DocsAttributes>

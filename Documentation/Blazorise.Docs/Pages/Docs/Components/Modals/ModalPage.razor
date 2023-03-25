@@ -1,10 +1,14 @@
 ﻿@page "/docs/components/modal"
 
-<Seo Canonical="/docs/components/modal" Title="Blazorise Modal system" Description="The modal component provides a solid foundation for creating dialogs, popovers, lightboxes, or whatever else." />
+<Seo Canonical="/docs/components/modal" Title="Blazorise Modal component" Description="Learn to use and work with the Blazorise Modal component, which provides a solid foundation for creating dialogs, popovers, lightboxes, or whatever else." />
 
-<DocsPageTitle>
-    Modal component
+<DocsPageTitle Path="Components/Modal">
+    Blazorise Modal component
 </DocsPageTitle>
+
+<DocsPageLead>
+    Dialog is a small window that can be used to present information and user interface elements in an overlay.
+</DocsPageLead>
 
 <DocsPageParagraph>
     The modal component provides a solid foundation for creating dialogs, popovers, lightboxes, or whatever else.
@@ -88,6 +92,18 @@
 </DocsPageSection>
 
 <DocsPageSubtitle>
+    Best Practices
+</DocsPageSubtitle>
+
+<Heading Size="HeadingSize.Is3">
+    Use Sparingly
+</Heading>
+
+<DocsPageParagraph>
+    Modal dialogs are disruptive by nature and should be used sparingly. Do not use them to communicate nonessential information, such as success messages like "Logged in", "Copied", etc. Instead, use <Anchor To="docs/services/notification-provider">Notifications</Anchor> when appropriate.
+</DocsPageParagraph>
+
+<DocsPageSubtitle>
     Functions
 </DocsPageSubtitle>
 
@@ -111,8 +127,12 @@
 </Table>
 
 <DocsPageSubtitle>
-    Attributes
+    API
 </DocsPageSubtitle>
+
+<Heading Size="HeadingSize.Is3">
+    Attributes
+</Heading>
 
 <DocsAttributes Title="Modal">
     <DocsAttributesItem Name="Visible" Type="boolean" Default="false">
@@ -139,20 +159,23 @@
     <DocsAttributesItem Name="ShowBackdrop" Type="boolean" Default="true">
         If true the the backdrop will be rendered.
     </DocsAttributesItem>
-    <DocsAttributesItem Name="IsAnimated" Type="boolean" Default="true">
+    <DocsAttributesItem Name="Animated" Type="boolean" Default="true">
         Gets or sets whether the component has any animations.
     </DocsAttributesItem>
     <DocsAttributesItem Name="AnimationDuration" Type="int" Default="150">
         Gets or sets the animation duration.
+    </DocsAttributesItem>
+    <DocsAttributesItem Name="RenderMode" Type="ModalRenderMode" Default="Default">
+        Defines how the modal content will be rendered.
+    </DocsAttributesItem>
+    <DocsAttributesItem Name="FocusTrap" Type="bool?" Default="true">
+        Defines if the modal should keep the input focus at all times.
     </DocsAttributesItem>
 </DocsAttributes>
 
 <DocsAttributes Title="ModalContent">
     <DocsAttributesItem Name="Centered" Type="boolean" Default="false">
         Centers the modal vertically.
-    </DocsAttributesItem>
-    <DocsAttributesItem Name="Fullscreen" Type="boolean" Default="false">
-        Defines the modal that covers the user viewport.
     </DocsAttributesItem>
     <DocsAttributesItem Name="Scrollable" Type="boolean" Default="false">
         Scrolls the modal content independent of the page itself.

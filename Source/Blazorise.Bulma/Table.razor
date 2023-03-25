@@ -1,21 +1,17 @@
 ﻿@inherits Blazorise.Table
-<CascadingValue Value="@this" IsFixed="true">
+<CascadingValue Value="@this" IsFixed>
     @if ( HasContainer )
     {
         <div style="display: grid;">
             <div class="@ContainerClassNames" style="@ContainerStyleNames">
                 <table @ref="@ElementRef" id="@ElementId" class="@ClassNames" style="@StyleNames"
-                       draggable="@Draggable"
-                       @ondrag="@OnDragHandler"
-                       @ondrag:preventDefault="@DragPreventDefault"
+                       draggable="@DraggableString"
                        @ondragend="@OnDragEndHandler"
                        @ondragend:preventDefault="@DragEndPreventDefault"
                        @ondragenter="@OnDragEnterHandler"
                        @ondragenter:preventDefault="@DragEnterPreventDefault"
                        @ondragleave="@OnDragLeaveHandler"
                        @ondragleave:preventDefault="@DragLeavePreventDefault"
-                       @ondragover="@OnDragOverHandler"
-                       @ondragover:preventDefault="@DragOverPreventDefault"
                        @ondragstart="@OnDragStartHandler"
                        @ondragstart:preventDefault="@DragStartPreventDefault"
                        @ondrop="@OnDropHandler"
@@ -29,17 +25,13 @@
     else
     {
         <table @ref="@ElementRef" id="@ElementId" class="@ClassNames" style="@StyleNames"
-               draggable="@Draggable"
-               @ondrag="@OnDragHandler"
-               @ondrag:preventDefault="@DragPreventDefault"
+               draggable="@DraggableString"
                @ondragend="@OnDragEndHandler"
                @ondragend:preventDefault="@DragEndPreventDefault"
                @ondragenter="@OnDragEnterHandler"
                @ondragenter:preventDefault="@DragEnterPreventDefault"
                @ondragleave="@OnDragLeaveHandler"
                @ondragleave:preventDefault="@DragLeavePreventDefault"
-               @ondragover="@OnDragOverHandler"
-               @ondragover:preventDefault="@DragOverPreventDefault"
                @ondragstart="@OnDragStartHandler"
                @ondragstart:preventDefault="@DragStartPreventDefault"
                @ondrop="@OnDropHandler"

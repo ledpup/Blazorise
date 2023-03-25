@@ -2,11 +2,12 @@
 
 <Layout>
     <LayoutHeader>
-        <Bar Class="b-top-bar" @bind-Visible="@topbarVisible" Breakpoint="Breakpoint.Desktop" Background="Background.Light" ThemeContrast="ThemeContrast.Light">
+        <Bar Class="b-top-bar" @bind-Visible="@topbarVisible" Breakpoint="Breakpoint.Desktop" Background="Background.Light" ThemeContrast="ThemeContrast.Light" Shadow="Shadow.Default">
             <Container>
                 <BarBrand>
                     <BarItem>
                         <BarLink Class="top-bar-brand-link" To="">
+                            <BarIcon IconName="customIcon" Display="Display.InlineBlock" />
                             Blazorise
                         </BarLink>
                     </BarItem>
@@ -14,6 +15,16 @@
                 <BarToggler />
                 <BarMenu>
                     <BarStart>
+                        <BarItem Margin="Margin.Is3.FromEnd">
+                            <BarLink To="" Shadow="Shadow.Small" Border="Border.Rounded.Is1.Primary.OnBottom.Is1.Primary.OnTop" TextWeight="TextWeight.Normal">
+                                Community
+                            </BarLink>
+                        </BarItem>
+                        <BarItem Margin="Margin.Is3.FromEnd">
+                            <BarLink To="commercial">
+                                Commercial
+                            </BarLink>
+                        </BarItem>
                     </BarStart>
                     <BarEnd>
                         <TopMenuEnd />
@@ -23,11 +34,12 @@
         </Bar>
     </LayoutHeader>
     <LayoutContent>
-        <Container Fluid="true" Padding="Padding.Is0.OnX">
-            @Body
-        </Container>
+        @Body
     </LayoutContent>
     <LayoutFooter Padding="Padding.Is4.FromTop.Is5.FromTop.OnDesktop" Margin="Margin.Is5.OnY.OnDesktop" Border="Border.OnTop">
         <Footer />
     </LayoutFooter>
 </Layout>
+@code {
+    RenderFragment customIcon =@<img src="img/logos/blazorise-small.svg" alt="Blazorise logo" style="width:32px; height: 32px" />;
+}

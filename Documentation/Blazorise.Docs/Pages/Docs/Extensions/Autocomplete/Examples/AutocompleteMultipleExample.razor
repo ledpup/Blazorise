@@ -6,18 +6,18 @@
               TextField="@(( item ) => item.Name)"
               ValueField="@(( item ) => item.Iso)"
               Placeholder="Search..."
-              Multiple
+              SelectionMode="AutocompleteSelectionMode.Multiple"
               FreeTyping
               @bind-SelectedValues="multipleSelectionData"
               @bind-SelectedTexts="multipleSelectionTexts">
 </Autocomplete>
 
-<Field Horizontal="true">
+<Field Horizontal>
     <FieldBody ColumnSize="ColumnSize.Is12">
         Selected Values: @string.Join(',', multipleSelectionData)
     </FieldBody>
     <FieldBody ColumnSize="ColumnSize.Is12">
-        Selected Texts: @string.Join(',', multipleSelectionTexts)
+        Selected Texts: @(multipleSelectionTexts == null ? null : string.Join(',', multipleSelectionTexts))
     </FieldBody>
 </Field>
 
@@ -34,5 +34,5 @@
     }
 
     List<string> multipleSelectionData;
-    List<string> multipleSelectionTexts = new();
+    List<string> multipleSelectionTexts;
 }

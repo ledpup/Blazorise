@@ -1,3 +1,8 @@
+import "./vendors/easymde.js?v=1.2.2.0";
+import "./vendors/highlight.js?v=1.2.2.0";
+
+document.getElementsByTagName("head")[0].insertAdjacentHTML("beforeend", "<link rel=\"stylesheet\" href=\"_content/Blazorise.Markdown/vendors/easymde.css?v=1.2.2.0\" />");
+
 const _instances = [];
 
 export function initialize(dotNetObjectRef, element, elementId, options) {
@@ -45,16 +50,11 @@ export function initialize(dotNetObjectRef, element, elementId, options) {
         onError: (e) => { }
     };
 
-    const easyMDE = new EasyMDE({
+    const mdeOptions = {
         element: document.getElementById(elementId),
         hideIcons: options.hideIcons,
         showIcons: options.showIcons,
-        renderingConfig: {
-            singleLineBreaks: false,
-            codeSyntaxHighlighting: true
-        },
         initialValue: options.value,
-        sideBySideFullscreen: false,
         autoDownloadFontAwesome: options.autoDownloadFontAwesome,
         lineNumbers: options.lineNumbers,
         lineWrapping: options.lineWrapping,
@@ -67,7 +67,7 @@ export function initialize(dotNetObjectRef, element, elementId, options) {
         toolbar: options.toolbar,
         toolbarTips: options.toolbarTips,
 
-        uploadImage: true,
+        uploadImage: options.uploadImage,
         imageMaxSize: options.imageMaxSize,
         imageAccept: options.imageAccept,
         imageUploadEndpoint: options.imageUploadEndpoint,
@@ -103,8 +103,53 @@ export function initialize(dotNetObjectRef, element, elementId, options) {
         errorMessages: options.errorMessages,
         errorCallback: (errorMessage) => {
             dotNetObjectRef.invokeMethodAsync("NotifyErrorMessage", errorMessage);
-        }
-    });
+        },
+
+        autofocus: options.autofocus,
+        autoRefresh: options.autoRefresh,
+        autosave: options.autosave,
+        blockStyles: options.blockStyles,
+        forceSync: options.forceSync,
+        indentWithTabs: options.indentWithTabs,
+        inputStyle: options.inputStyle,
+        insertTexts: options.insertTexts,
+        nativeSpellcheck: options.nativeSpellcheck,
+        parsingConfig: options.parsingConfig,
+        previewClass: options.previewClass,
+        previewRender: options.usePreviewRender ? (plainText, preview) => {
+            dotNetObjectRef.invokeMethodAsync("NotifyPreviewRender", plainText).then((htmlText) => {
+                preview.innerHTML = htmlText;
+            }).catch((error) => {
+                console.error(error);
+            });
+        } : null,
+        previewImagesInEditor: options.previewImagesInEditor,
+        promptTexts: options.promptTexts,
+        promptURLs: options.promptURLs,
+        renderingConfig: options.renderingConfig ? options.renderingConfig : {
+            singleLineBreaks: false,
+            codeSyntaxHighlighting: true
+        },
+        scrollbarStyle: options.scrollbarStyle,
+        shortcuts: options.shortcuts,
+        sideBySideFullscreen: options.sideBySideFullscreen,
+        spellChecker: options.spellChecker,
+        status: options.status,
+        styleSelectedText: options.styleSelectedText,
+        syncSideBySidePreviewScroll: options.syncSideBySidePreviewScroll,
+        unorderedListStyle: options.unorderedListStyle,
+        toolbarButtonClassPrefix: options.toolbarButtonClassPrefix
+    };
+
+    if (!mdeOptions.status) {
+        // remove empty status so that we can fallback to the default items
+        delete mdeOptions.status;
+    }
+    else if (mdeOptions.status.length === 0) {
+        mdeOptions.status = false;
+    }
+
+    const easyMDE = new EasyMDE(mdeOptions);
 
     easyMDE.codemirror.on("change", function () {
         dotNetObjectRef.invokeMethodAsync("UpdateInternalValue", easyMDE.value());
@@ -120,7 +165,15 @@ export function initialize(dotNetObjectRef, element, elementId, options) {
 
 export function destroy(element, elementId) {
     const instances = _instances || {};
-    delete instances[elementId];
+
+    const instance = instances[elementId];
+
+    if (instance) {
+        instance.editor.toTextArea();
+        instance.editor = null;
+
+        delete instances[elementId];
+    }
 }
 
 export function setValue(elementId, value) {
@@ -154,5 +207,15 @@ export function notifyImageUploadError(elementId, errorMessage) {
 
     if (instance) {
         return instance.imageUploadNotifier.onError(errorMessage);
+    }
+}
+
+export function focus(elementId, scrollToElement) {
+    const instance = _instances[elementId];
+
+    if (instance) {
+        return instance.editor.codemirror.focus({
+            preventScroll: !scrollToElement
+        });
     }
 }

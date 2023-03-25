@@ -1,10 +1,14 @@
 ﻿@page "/docs/usage/ant-design"
 
-<Seo Canonical="/docs/usage/ant-design" Title="AntDesign Usage" Description="Learn all the steps on how to quickly install and setup Blazorise for AntDesign CSS framework and FontAwesome icons." />
+<Seo Canonical="/docs/usage/ant-design" Title="Blazorise AntDesign Usage" Description="Learn all the steps on how to quickly install and setup Blazorise for AntDesign CSS framework and FontAwesome icons." />
 
-<DocsPageTitle>
-    Ant Design Usage
+<DocsPageTitle Path="Usage/Ant Design">
+    Blazorise Ant Design Usage
 </DocsPageTitle>
+
+<DocsPageLead>
+    Quickly install Blazorise with Ant Design, one of the world's most popular Blazor UI framework.
+</DocsPageLead>
 
 <DocsPageParagraph>
     <Alert Color="Color.Info" Visible>
@@ -16,7 +20,7 @@
 </DocsPageParagraph>
 
 <DocsPageSubtitle>
-    1. NuGet packages
+    Install Packages
 </DocsPageSubtitle>
 
 <DocsPageSection>
@@ -34,12 +38,12 @@
 </DocsPageSection>
 
 <DocsPageSubtitle>
-    2. Source files
+    Add Static Files
 </DocsPageSubtitle>
 
 <DocsPageSection>
     <DocsPageSectionHeader>
-        The next step is to change your <Code>index.html</Code> or <Code>_Host.cshtml</Code> file and include the CSS and JS source files:
+        The next step is to change your <Code>index.html</Code> or <Code>_Layout.cshtml</Code> / <Code>_Host.cshtml</Code> file and include the CSS and JS source files:
     </DocsPageSectionHeader>
     <DocsPageSectionSource Code="AntDesignGuideSourceFilesExample" />
 </DocsPageSection>
@@ -51,55 +55,31 @@
 </Alert>
 
 <DocsPageSubtitle>
-    3. Usings
+    Add Imports
 </DocsPageSubtitle>
 
 <DocsPageSection>
     <DocsPageSectionHeader>
-        In your main _Imports.razor add:
+        In your main <Badge Color="Color.Light">_Imports.razor</Badge> add:
     </DocsPageSectionHeader>
     <DocsPageSectionSource Code="AntDesignGuideUsingExample" />
 </DocsPageSection>
 
 <DocsPageSubtitle>
-    4. Registrations
+    Register Services
+</DocsPageSubtitle>
+
+<DocsPageSection>
+    <DocsPageSectionHeader>
+        Add the following lines to the relevant sections of <Code>Program.cs</Code>.
+    </DocsPageSectionHeader>
+    <DocsPageSectionSource Code="AntDesignGuideRegistrationExample" />
+</DocsPageSection>
+
+<DocsPageSubtitle>
+    PWA & Offline Support (optional)
 </DocsPageSubtitle>
 
 <DocsPageParagraph>
-    Depending on the hosting model of your Blazor project you only need to apply either step <Strong>4.a</Strong> or <Strong>4.b</Strong>.
-    You should not include both of them as that is generally not supported.
+    For information about PWAs & offline support, please take a look at our <Blazorise.Link To="docs/pwa">PWA docs.</Blazorise.Link>
 </DocsPageParagraph>
-
-<DocsPageParagraph>
-    To Learn more about the different project types you can go to the <Blazorise.Link To="https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models" Target="Target.Blank">official documentation</Blazorise.Link>.
-</DocsPageParagraph>
-
-<Tabs @bind-SelectedTab="@selectedSection4">
-    <Items>
-        <Tab Name="4a" TextWeight="TextWeight.Bold">4.a Blazor WebAssembly</Tab>
-        <Tab Name="4b" TextWeight="TextWeight.Bold">4.b Blazor Server</Tab>
-    </Items>
-    <Content>
-        <TabPanel Name="4a" Padding="Padding.Is2.FromTop">
-            <DocsPageSection>
-                <DocsPageSectionHeader>
-                    This step is mandatory for <Strong>Blazor WebAssembly</Strong> (client-side).
-                    You should place the code into the <Strong>Program.cs</Strong> of your client project injecting the required Blazorise dependencies.
-                </DocsPageSectionHeader>
-                <DocsPageSectionSource Code="AntDesignGuideRegistration1Example" />
-            </DocsPageSection>
-        </TabPanel>
-        <TabPanel Name="4b" Padding="Padding.Is2.FromTop">
-            <DocsPageSection>
-                <DocsPageSectionHeader>
-                    For <Strong>Blazor Server</Strong> project, or any regular <Strong>ASP.NET Core hosted</Strong> project types.
-                    You should place the code into the <Strong>Startup.cs</Strong> injecting the required Blazorise dependencies.
-                </DocsPageSectionHeader>
-                <DocsPageSectionSource Code="AntDesignGuideRegistration2Example" />
-            </DocsPageSection>
-        </TabPanel>
-    </Content>
-</Tabs>
-@code{
-    string selectedSection4 = "4a";
-}
